@@ -7,13 +7,21 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 
 
 <h1>Web Developer Tools</h1>
+<h2>Useful Resources</h2>
+<a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">Resources Link</a>
+
+<a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" alt="HTML Cheatsheet" title="Standford HTML Cheatsheet">Stanford HTML Cheatsheet</a>
+
+Joel Spolsky on <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">the absolute minimum any developer needs to know about unicode</a>
+
+<a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
 <h2>VisualStudio Code</h2>
 <ol>
-
+    <li><a href="https://docs.google.com/document/d/1eltxPSyGRFjN0Bc2ClCTOQmj_5mDq_8Go5GnL25qt04/edit">VisualCode Extensions</a></li>
 </ol>
 
 
 <h2>Extensions</h2>
 <ol>
-    <li>Pesticide</li>
+    <li><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">Pesticide</a>: Allows you to see all boxes on current webpage</li>
 </ol>
