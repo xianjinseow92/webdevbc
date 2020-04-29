@@ -1,0 +1,17 @@
+body {
+    background-color: blanchedalmond;
+}
+
+hr {
+    background-color: none;
+
+    border-style: dotted none none;
+    border-color: grey;
+    border-width: 8px;
+
+    border-top: 8px dotted;
+    border-top-color: grey;
+    height: 0px;
+
+    width: 8%;
+}
