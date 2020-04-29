@@ -1,5 +1,5 @@
 body {
-    background-color: blanchedalmond;
+    background-color: #EAF6F6;
 }
 
 hr {
@@ -14,4 +14,18 @@ hr {
     height: 0px;
 
     width: 8%;
+}
+
+h1 {
+    color: #66bfb6;
+    font-family: Verdana;
+}
+
+h3 {
+    color: #66bfb6;
+    font-family: Verdana;
+}
+
+table {
+    border-spacing: 15px;
 }
