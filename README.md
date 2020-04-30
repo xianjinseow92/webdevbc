@@ -15,8 +15,9 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 
 3. Joel Spolsky on <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">the absolute minimum any developer needs to know about unicode</a>
 
-
 4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
+
+5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
 
 <h2>Debugging</h2>
 
