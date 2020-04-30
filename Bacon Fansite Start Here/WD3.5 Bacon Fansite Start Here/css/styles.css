@@ -1,5 +1,41 @@
+/************* TAG SELECTORS **************/
+
 h1 {
     font-size: 200px;
     color: red;
 }
+/* :hover, :active things in CSS denote pseudo classes. 
+Pseudo classes represents an element (such as a button) that is being activated by the user. */
+/* In this case, :hover represents what happens when a user mouses over the img element */
+img:hover {
+    background-color: gold;
+}
 
+/************* CLASS SELECTORS **************/
+/* Classes are like names. Many people can have the same name */
+/* Multiple classes can be initialized within a single string value
+Eg. class="broccoli circular" */
+.bacon {
+    background-color: green;
+    width: 10%;
+    height: 10%;
+}
+
+.broccoli {
+    background-color: red;
+    width: 10%;
+    height: 10%;
+}
+
+.circular {
+    border-radius: 50%;
+}
+
+/************* ID SELECTORS **************/
+/* IDs are like passports. Many people can have the same name, but only one person can have that passport. */
+/* ID is can ONLY be initialized with 1-word strings. 
+Eg. id="heading" -> Correct
+    id="heading big" -> wrong */
+#heading {
+    color: blue;
+}
