@@ -2,7 +2,7 @@
 This github repo serves as a storage for XJ to migrate his work between his laptop and his desktop, as well as to track changes over his progression.
 
 <div id='corgi' align='center'>
-    <img src="./images/cute doggo.jpg" alt="cute doggo" width=60%>   
+    <img src="./images/cute doggo.jpg" alt="cute doggo" width=40%>   
 </div>
 
 
@@ -18,6 +18,11 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
 
 5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
+
+<h2>Graphics</h2>
+<ol>
+    <li><a href="https://www.favicon.cc/">FavIcon</a>: Create icons for your site (shown on your browser tab beside your webpage title)</li>
+</ol>
 
 <h2>Debugging</h2>
 
