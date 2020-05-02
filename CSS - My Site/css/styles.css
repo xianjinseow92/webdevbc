@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    font-family: Verdana;
 }
 
 h1 {
@@ -11,14 +12,35 @@ h1 {
     background-color: #c3edea;
 }
 
+.middle-container:hover {
+    display: none;
+}
+
+
 .middle-container {
     background-color: #f8f3eb;
     width: 200px;
     height: 200px;
+    margin-left: 200px;
+    display: flex;
+    text-align: center; 
+    align-items: center; 
 }
 
 .bottom-container {
     background-color: #fc7e2f;
     width: 200px;
     height: 200px;
+    margin-left: 400px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.bottom-container:hover {
+    background-color: #fc7e2f;
+    width: 200px;
+    height: 200px;
+    margin-left: 400px;
+    visibility: hidden;
 }
