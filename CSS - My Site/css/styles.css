@@ -2,16 +2,26 @@
 
 body {
     margin: 0px;
-    font-family: Verdana;
+    text-align: center;
+    /* Centers every inline-block and block elements within */
+    /* the parent element if width not specified in the child */
+    font-family: 'Merriweather', serif;
 }
 
 h1 {
     margin-top: 0px;
-    margin-bottom: 0px;
+    font-family: 'Sacramento', cursive;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
 
-/************* CLASS SELECTORS **************/  
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/************* CLASS SELECTORS **************/
 /* Classes are like names. Many people can have the same name
 You can give many elements the same class name
 Multiple classes can be initialized on an HTML element. Eg. <img class ='broccoli circular'></img>
@@ -34,10 +44,21 @@ I have just given the above element 2 classes
     border-radius: 50%;
 }  */
 
+.header-intro {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.p-intro {
+     margin-top:0;
+}
 
 .top-container {
     background-color: #c3edea;
+    position: relative;
+    padding-top: 100px;
 }
+
 
 .middle-container {
     background-color: #f8f3eb;
@@ -45,13 +66,14 @@ I have just given the above element 2 classes
     height: 200px;
     margin-left: 200px;
     display: flex;
-    text-align: center; 
-    align-items: center; 
+    text-align: center;
+    align-items: center;
 }
+
 .mid-hover:hover {
     display: none;
 }
-    
+
 
 .bottom-container {
     background-color: #fc7e2f;
@@ -62,16 +84,36 @@ I have just given the above element 2 classes
     text-align: center;
     align-items: center;
 }
+
 /* :hover, :active things in CSS denote pseudo classes. 
 Pseudo classes represents an element (such as a button) that is being activated by the user. */
 /* In this case, :hover represents what happens when a user mouses over the img element */
 
-/* img:hover {
+/*
+img:hover {
     background-color: gold;
-} */
+} 
+*/
 .bot-hover:hover {
     visibility: hidden;
 }
+
+.top-cloud {
+    position: absolute;
+    right: 20%;
+    top: 6%;
+}
+
+.bottom-cloud {
+    position: absolute;
+    bottom: 55%;
+    left: 20%;
+}
+
+
+
+
+
 
 
 /************* ID SELECTORS **************/
