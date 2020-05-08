@@ -1,125 +1,169 @@
-/************* TAG SELECTORS **************/
-
 body {
     margin: 0px;
     text-align: center;
     /* Centers every inline-block and block elements within */
     /* the parent element if width not specified in the child */
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", serif;
+    color: #40514e;
 }
 
 h1 {
     margin-top: 0px;
-    font-family: 'Sacramento', cursive;
+    font-family: "Sacramento", cursive;
+    font-size: 5.625rem;
+    margin: 50px 0 0 0;
+    color: #66bfbf;
+    line-height: 2;
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    color: #66bfbf;
+    font-weight: bold;
 }
 
 h3 {
+    font-family: "Montserrat", sans-serif;
+    color: #11999e;
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 2;
+    font-size: 1.15rem;
+}
+
+a {
+    color: #11999e;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
-/************* CLASS SELECTORS **************/
-/* Classes are like names. Many people can have the same name
-You can give many elements the same class name
-Multiple classes can be initialized on an HTML element. Eg. <img class ='broccoli circular'></img>
-I have just given the above element 2 classes
-  */
-/* 
-.bacon {
-    background-color: green;
+a:hover {
+    color: #EAF6F6;
+}
+
+hr {
+    border-style: none none dotted none;
     width: 10%;
-    height: 10%;
+    border-width: 10px;
+    border-color: #eaf6f6;
+    margin: 100px auto;
 }
 
-.broccoli {
-    background-color: red;
-    width: 10%;
-    height: 10%;
-}
-
-.circular {
-    border-radius: 50%;
-}  */
-
-.header-intro {
-    font-size: 60px;
-    margin-bottom: 0;
-}
-
-.p-intro {
-     margin-top:0;
+.top-container-h2 {
+    font-weight: normal;
 }
 
 .top-container {
     background-color: #c3edea;
     position: relative;
-    padding-top: 100px;
+    padding-top: 200px;
+    color: #40514e;
 }
-
 
 .middle-container {
-    background-color: #f8f3eb;
-    width: 200px;
-    height: 200px;
-    margin-left: 200px;
-    display: flex;
-    text-align: center;
-    align-items: center;
+    margin: 100px auto;
 }
 
-.mid-hover:hover {
-    display: none;
+.intro {
+    width: 30%;
+    margin: 0 auto;
 }
 
+.skill-row {
+    width: 50%;
+    margin: 150px auto 150px auto;
+    text-align: left;
+    padding: 50px;
+}
+
+.contact-message {
+    width: 50%;
+    margin: 50px auto;
+}
 
 .bottom-container {
-    background-color: #fc7e2f;
-    width: 200px;
-    height: 200px;
-    margin-left: 400px;
-    display: flex;
-    text-align: center;
-    align-items: center;
+    position: relative;
+    background-color: #66bfbf;
+    margin-top: 100px;
+    padding: 50px;
 }
 
-/* :hover, :active things in CSS denote pseudo classes. 
-Pseudo classes represents an element (such as a button) that is being activated by the user. */
-/* In this case, :hover represents what happens when a user mouses over the img element */
+.footer-copyright {
+    color: #eaf6f6;
+    font-size: 0.75rem;
+    padding: 20px 0;
+}
 
-/*
-img:hover {
-    background-color: gold;
-} 
-*/
-.bot-hover:hover {
-    visibility: hidden;
+.footer-link {
+    margin: 30px;
 }
 
 .top-cloud {
     position: absolute;
-    right: 20%;
-    top: 6%;
+    right: 15%;
+    top: 10%;
+    width: 15%;
 }
 
 .bottom-cloud {
     position: absolute;
-    bottom: 55%;
-    left: 20%;
+    bottom: 50%;
+    left: 15%;
+    width: 15%;
 }
 
+/* Child widths are always scaled in reference to their parent */
 
+.xj-img {
+    width: 15%;
+}
 
+.bartending-img {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
 
+.ds-img {
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+}
 
+.webdev-img {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
 
+.btn {
+    background: #11CDD4;
+    background-image: -webkit-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -moz-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -ms-linear-gradient(top, #11CDD4, #11999E);
+    background-image: -o-linear-gradient(top, #11CDD4, #11999E);
+    background-image: linear-gradient(to bottom, #11CDD4, #11999E);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
 
-/************* ID SELECTORS **************/
-/* IDs are like passports. Many people can have the same name, but only one person can have that passport. */
-/* There can only exist a single instance of an ID within the entire page */
-/* Examples of usage: Navigation bars. You're probably only going to have 1x navigation bar on your entire webpage */
-/* ID can ONLY be initialized with 1-word strings. 
-Eg. id="heading" -> Correct
-    id="heading big" -> wrong */
+.btn:hover {
+    background: #30E3CB;
+    border: solid #2BC4AD 0px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+}
