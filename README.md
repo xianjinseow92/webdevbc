@@ -9,7 +9,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <h1>Web Developer Tools</h1>
 <h2>Useful Resources</h2>
 
-1. <a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">Resources Link</a>
+1. <a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">WebDevBC Resources Link</a>
 
 2. <a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" alt="HTML Cheatsheet" title="Standford HTML Cheatsheet">Stanford HTML Cheatsheet</a>
 
@@ -18,6 +18,19 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
 
 5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
+
+<h2>Garnering Inspiration for Designs</h2>
+<ol>
+    <li><a href='https://www.ui-patterns.com'>UI Patterns</a>: Different UIs for different types of website functionality (carousell, etc.)</li>
+    <li><a href="https://www.dribbble.com">Dribbble</a>: Check out other people's websites. Can even search for websites by shade of color.</li>
+</ol>
+
+
+<h2>WireFraming</h2>
+
+<ol>
+    <li><a href='https://www.sneakpeekit.com'>Downloadable Templates for Browsers, Mobile, Tablets</a>: Can be downloaded onto paper to be drawn on (wireframing)</li>
+</ol>
 
 <h2>Graphics/Designing your Website</h2>
 <ol>
