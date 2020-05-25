@@ -3,7 +3,7 @@
 This github repo serves as a storage for XJ to migrate his work between his laptop and his desktop, as well as to track changes over his progression.
 
 <div id='corgi' align='center'>
-    <img src="./images/cute doggo.jpg" alt="cute doggo" width=40%>   
+    <img src="./images/cute doggo.jpg" alt="cute doggo" width=30%>   
 </div>
 
 <h1>Web Developer Tools</h1>
@@ -19,7 +19,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 
 5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
 
-<h2>Garnering Inspiration for Designs</h2>
+<h2>Gathering Inspiration for Website Design</h2>
 <ol>
     <li><a href='https://www.ui-patterns.com'>UI Patterns</a>: Different UIs for different types of website functionality (carousell, etc.)</li>
     <li><a href="https://www.dribbble.com">Dribbble</a>: Check out other people's websites. Can even search for websites by shade of color.</li>
@@ -34,6 +34,8 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 
 <h2>Graphics/Designing your Website</h2>
 <ol>
+    <li><a href='https://bootsnipp.com/'>Bootsnip</a>: For Bootstrap Code snippets of various parts of a website (login, pricing page, etc.)</li>
+    <li><a href='https://fontawesome.com'>FontAwesome</a>: Over 900 icons free for commercial use (apple icon, download icon, play icon, etc)</li>
     <li><a href="https://www.favicon.cc/">FavIcon</a>: Create icons for your site (shown on your browser tab beside your webpage title)</li>
     <li><a href='https://www.cssfontstack.com/'>Web-Safe Fonts!</a>: To ensure that your users are seeing similar fonts to what you want to render should they not have the font on their OS</li>
     <li><a href='https://fonts.google.com/'>Font Embedding</a>: To ensure that your users will see your font no matter what</li>
@@ -60,6 +62,12 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
         </ul>
     </li>
 </ol>
+
+<h2>Before publishing your website</h2>
+<ol>
+    <li><a href='https://search.google.com/test/mobile-friendly'>Test for mobile friendliness</a>: Because an mobile-unfriendly website affects it's google ranking. And let's face it, nobody's gonna go through pages 2-3 of the google search page.</li>
+</ol>
+
 
 <h2>Debugging</h2>
 
