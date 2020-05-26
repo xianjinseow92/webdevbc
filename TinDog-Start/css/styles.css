@@ -28,6 +28,17 @@ p {
   padding: 7% 15%;
 }
 
+/* Sections  */
+
+.colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+.white-section {
+  background-color: white;
+}
+
 /* Headings  */
 .big-heading {
   font-weight: 900;
@@ -57,14 +68,9 @@ p {
 }
 
 /* Title Section */
-#title {
-  background-color: #ff4c68;
-  color: #fff;
-  text-align: left;
-}
-
 #title .container-fluid {
   padding: 3% 15% 7%;
+  text-align: left;
 }
 
 /* Title Image */
@@ -89,7 +95,6 @@ Sections basically divide your website up into boxes that you can work on.
 Remember, in HTML, everything is essentially a box */
 
 #features {
-  background-color: white;
   position: relative;
 }
 
@@ -114,8 +119,7 @@ Remember, in HTML, everything is essentially a box */
 
 /* Testimonials Section */
 #testimonials {
-  background-color: #ef8172;
-  color: #fff;
+  background-color: #ef8172; /* This style overwrites the .colored-section because it is an ID and it is more specific. */
 }
 
 .testimonial-text {
@@ -168,10 +172,6 @@ Remember, in HTML, everything is essentially a box */
 }
 
 /* Call to Action Section  */
-#cta {
-  background-color: #ff4c68;
-}
-
 h3.cta-header {
   color: white;
   font-weight: 900;
@@ -184,10 +184,6 @@ h3.cta-header {
 }
 
 /* Footer Section */
-#footer {
-  background-color: #fff;
-}
-
 .social-icons {
   margin: 20px 10px;
 }
