@@ -6,22 +6,17 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
     <img src="./images/cute doggo.jpg" alt="cute doggo" width=30%>   
 </div>
 
+
 <h1>Web Developer Tools</h1>
-<h2>Useful Resources</h2>
 
-1. <a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">WebDevBC Resources Link</a>
-
-2. <a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" alt="HTML Cheatsheet" title="Standford HTML Cheatsheet">Stanford HTML Cheatsheet</a>
-
-3. Joel Spolsky on <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">the absolute minimum any developer needs to know about unicode</a>
-
-4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
-
-5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
+<h2>Skill Upgrade</h2>
+<ol>
+    <li><a href='https://www.dailyui.co/'>DailyUI</a>: Gives you a task to design a UI everyday!</li>
+</ol>
 
 <h2>Gathering Inspiration for Website Design</h2>
 <ol>
-    <li><a href='https://www.ui-patterns.com'>UI Patterns</a>: Different UIs for different types of website functionality (carousell, etc.)</li>
+    <li><a href='https://ui-patterns.com/patterns'>UI Patterns</a>: Different UIs for different types of website functionality (carousell, etc.)</li>
     <li><a href="https://www.dribbble.com">Dribbble</a>: Check out other people's websites. Can even search for websites by shade of color.</li>
 </ol>
 
@@ -48,7 +43,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
         </ul>
     <li><a href='https://uxplanet.org/create-emotion-with-color-in-ux-design-446a3766b085#.833er7ned'>Explanation on how to create Emotion with Color</a></li>
     </li>
-    <li>Tools for Choosing a Color 'cause you're lazy and have no time 
+    <li>**Tools** for Choosing a Color 'cause you're lazy and have no time 
         <ul>
             <li><a href='https://colorhunt.co/'>ColorHunt</a>: Choose Color Palettes</li>
             <li><a href='https://flatuicolors.com/'>FlatUIColors</a>: Color Palette for iOS Platform</li>
@@ -81,3 +76,16 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <ol>
     <li><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">Pesticide</a>: Allows you to see all boxes on current webpage</li>
 </ol>
+
+
+<h2>Useful Resources</h2>
+
+1. <a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">WebDevBC Resources Link</a>
+
+2. <a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" alt="HTML Cheatsheet" title="Standford HTML Cheatsheet">Stanford HTML Cheatsheet</a>
+
+3. Joel Spolsky on <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">the absolute minimum any developer needs to know about unicode</a>
+
+4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
+
+5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
