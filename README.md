@@ -75,6 +75,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <h2>Extensions</h2>
 <ol>
     <li><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">Pesticide</a>: Allows you to see all boxes on current webpage</li>
+    <li><a href='https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg/related'>HTML Tree Generator</a>: Allows you to visualize what browser does when it turns your HTML code into a DOM tree.</li>
 </ol>
 
 
