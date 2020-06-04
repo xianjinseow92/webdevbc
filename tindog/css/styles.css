@@ -171,6 +171,10 @@ Remember, in HTML, everything is essentially a box */
   font-weight: 800;
 }
 
+.price-card-body-fourth-para {
+  visibility: hidden;
+}
+
 /* Call to Action Section  */
 h3.cta-header {
   color: white;
@@ -189,13 +193,12 @@ h3.cta-header {
 }
 
 @media (max-width: 990px) {
-  #title {
-    text-align: center;
-  }
   .title-img {
     position: static;
     transform: rotate(0);
-    margin-left: 0;
     margin-top: 3%;
+  }
+  .title-container{
+    text-align: center;
   }
 }
