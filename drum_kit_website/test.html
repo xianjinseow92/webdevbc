@@ -1,0 +1,23 @@
+
+<script>
+debugger;
+const addAnotherEventListner = (eventType, callback) => {
+
+    // Detecting Event Code..
+
+    const eventThatHappened = {   // this is an object that was created. it creates a dictionary
+        eventType: "keypress",
+        key: "p",
+        durationOfPress: 2
+    }
+
+    if (eventThatHappened.eventType === 'keypress') {
+        callback(eventThatHappened);   // runs the callback func with the eventThatHappened object as a parameter
+        // this callback func is this (eventThatHappened) => {console.log(eventThatHappened)}, essentially.
+    }
+}
+
+addAnotherEventListner('keypress', (evt) => {
+    console.log(evt);   // the purpose of this callback function is to log it's own arguments. previously, we run the callback function with 'eventThatHappened' object
+})
+</script>

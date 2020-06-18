@@ -12,6 +12,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <h2>Skill Upgrade</h2>
 <ol>
     <li><a href='https://www.dailyui.co/'>DailyUI</a>: Gives you a task to design a UI everyday!</li>
+    <li><a href='https://www.frontendmentor.io/'>Frontend Mentor</a>: Gives you a task of building a website. Builds front-end skills</li>
 </ol>
 
 <h2>Gathering Inspiration for Website Design</h2>
@@ -76,6 +77,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <ol>
     <li><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">Pesticide</a>: Allows you to see all boxes on current webpage</li>
     <li><a href='https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg/related'>HTML Tree Generator</a>: Allows you to visualize what browser does when it turns your HTML code into a DOM tree.</li>
+    <li><a href='https://www.wappalyzer.com/download'>Wappalyzer</a>: Analyze what tools a website is using.</li>
 </ol>
 
 
