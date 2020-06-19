@@ -1,0 +1,5 @@
+/* Allow padding and border to be included in height and width of all elements */
+* {
+    box-sizing: border-box;
+}
+
