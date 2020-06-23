@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #272727;
+    /* The following properties are just for demonstration purposes */
+    display: flex;     
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  
+  /* Hamburger Icon Design */
+  /* Hamburger for websites */
+  /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+  .hamburger {
+    position: relative;
+  
+    /* sets display flex for the hamburger container. So it's child elements will be flex-items. */
+    display: flex;     /* Parent (flex-container) properties */
+    justify-content: center;   /* main axis (horizontal) */
+    align-items: center;   /* cross-axis  (vertical) */
+  
+    /* Hamburger box height and width*/
+    width: 80px;
+    height: 80px;
+  
+    /* Aesthetics and Semantics */
+    cursor: pointer; /* Turns your cursor into a finger pointer */
+    transition: all .5s ease-in-out;   /* adds a smooth transition effect to your elements */
+    border: 3px solid #fff;
+  }
+  
+  .hamburger:hover {
+    background-color: grey;
+  }
+  
+  /* center slice */
+  .hamburger-slice {
+    /* Hamburger width and height */
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+  }
+  
+  /* Creating top and bottom slice. This stuff is actually not inside the dom! */
+  /* this creates the slices INSIDE the hamburger-slice div. It is a CONTENT. NOT an element */
+  .hamburger-slice::before, 
+  .hamburger-slice::after {
+    /* Bringing the slice into existence */
+    content: '';
+    position: absolute;
+    
+    /* Giving the hamburger slice a width and height */
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+  }
+  
+  .hamburger-slice::before {
+    transform: translateY(-16px);  /* before line moves up 16px */
+  }
+  .hamburger-slice::after {
+    transform: translateY(16px); /* after line moves down 16px */
+  }
+  
+  /* Hamburger Animation */
+  .hamburger.open .hamburger-slice {  /* This is the middle line */
+    transform: translateX(-50px);  /* makes your middle button move off to the left */
+    background: transparent;  
+    /* you can't set opacity: 0 here because that will set the content to opaque too. */
+    /* hamburger slice::before and ::after are both contents of the hamburger-slice div */
+    /* therefore setting opacity will turn them opaque as well. */
+  }
+  
+  .hamburger.open .hamburger-slice::before {
+    transform: translate(50px) rotate(45deg);
+  }
+  
+  .hamburger.open .hamburger-slice::after {
+    transform: translate(50px) rotate(-45deg);
+  }
+    
+  /* Hamburger for Mobile */
+  
+
+
+
+
+
+
+
+  /* NavBar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__collapse {
+    display: flex;
+    flex-wrap: wrap;
+}
