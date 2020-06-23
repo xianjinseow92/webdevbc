@@ -3,7 +3,7 @@
 This github repo serves as a storage for XJ to migrate his work between his laptop and his desktop, as well as to track changes over his progression.
 
 <div id='corgi' align='center'>
-    <img src="./images/cute doggo.jpg" alt="cute doggo" width=30%>   
+    <img src="./images/cute doggo.jpg" alt="cute corgi" width=30%>   
 </div>
 
 
@@ -62,6 +62,7 @@ This github repo serves as a storage for XJ to migrate his work between his lapt
 <h2>Before publishing your website</h2>
 <ol>
     <li><a href='https://search.google.com/test/mobile-friendly'>Test for mobile friendliness</a>: Because an mobile-unfriendly website affects it's google ranking. And let's face it, nobody's gonna go through pages 2-3 of the google search page.</li>
+    <li><a href='https://www.minifier.org/'>Minifier</a>: Minifies your Javacsript code to save some bytes (removes comments, newlines, spaces)</li>
 </ol>
 
 

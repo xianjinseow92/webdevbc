@@ -36,10 +36,11 @@ function makeSound(inputKey) {
             kick.play()
             break;    
 
-        default: console.log(buttonInnerHTML)
+        default: console.log(inputKey)
             break;
     }
 }
+
 
 // define query to all buttons with the class .drum. We do this so that we don't add an eventlistener to ALL buttons
 const ALLDRUMBUTTONS = document.querySelectorAll('.drum'); 
@@ -47,33 +48,60 @@ let numDrumButtons = ALLDRUMBUTTONS.length;
 
 // Detecting button click
 for (i = 0; i < numDrumButtons; i++) { 
-
-    
     ALLDRUMBUTTONS[i].addEventListener('click', function(eventClick) { // add event listener to all buttons
         // when clicked on, will trigger the function attached to the event listener
 
         // `this` is the identity of the button that was clicked.
         // Remember, `this` has different values depending on where it's placed. 
             // In an event listener, it represents the element. As an inner method, it represents the outer func.
-        var buttonInnerHTML = this.innerHTML;  // grab the innerHTML of each button. 'w', 'a', ... 
-
-
+        const buttonInnerHTML = this.innerHTML;  // grab the innerHTML of each button. 'w', 'a', ... 
         makeSound(buttonInnerHTML);  // checks the value of the buttonInnerHTML, which is the key, and passes it into makeSound which plays audio if key matches switch case
+        buttonAnimation(buttonInnerHTML);
 
         console.log(eventClick);
-
     })
 }
 
 
 // Detecting keyboard press on the browser window
-document.addEventListener('keydown', function(event) {
-    // alert('A key was pressed!'); // alert deselects the document tree
-
+document.addEventListener('keydown', function(event) {  // event is an object with properties relating to it.
+    // eg. event.key returns the key (on the keyboard) that was pressed.
     makeSound(event.key);  // checks key and plays audio
+    buttonAnimation(event.key);
 
     console.log(event.key);
+
+    // alert('A key was pressed!'); // alert deselects the document tree
+
 })
+
+
+const buttonAnimation = (currentKey) => {
+    const activeButton = document.querySelector('.' + currentKey);
+    activeButton.classList.add('pressed');
+
+    setTimeout( () => {
+        activeButton.classList.remove('pressed');
+    }, 100);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
