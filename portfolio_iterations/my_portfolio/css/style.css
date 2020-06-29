@@ -1,5 +1,107 @@
-/* Allow padding and border to be included in height and width of all elements */
-* {
-    box-sizing: border-box;
+/* || Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
+* {
+    /* Allow padding and border to be included in height and width of all elements */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;  /* allows elements to stack on top of each other when the browser window becomes too small to fit all elements on a single line */
+}
+
+
+/* || Header Section */
+header {
+    position: absolute;  /* allows the header section to sit on top of background image */
+    left: 0;  /* stretches the box of header out to the width of the browser */
+    right: 0; /* margin will not work because position absolute takes element out of document flow */
+    border-bottom: 1px solid #432940; /* creates a tiny line underneath so it provides an effect of separating the navbar from the rest of the portfolio */
+    padding: 0 1rem; /* creates some space top and bottom of the whole navbar (including brand) */
+    z-index: 10; /* ensures header will always sit on top of home section */
+}
+
+/* ||| Navbar  */
+header .row { /* separates brand from navigation list */
+    justify-content: space-between;
+    align-items: center; /* vertically aligns items in the 'row' class */
+}
+
+header .brand-name a { 
+    text-decoration: none;
+    font-size: 1.375rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase; /* transforms text */
+
+}
+
+header .navbar {   /* navigation list */
+
+}
+
+header .navbar ul { /* the whole unordered list under the ul*/
+    list-style: none; /* shorthand for the following properties:
+    /* list-style-type | list-style-position | list-style-image */
+    padding: 0;
+    margin: 0;
+}
+
+header .navbar ul li {
+    display: inline-block; /* allows each item to stack beside each other */
+    /* also has some default styling applied, like margins */
+    margin-left: 35px; /* spaces out each list item from one another */
+}
+
+
+header .navbar ul li a {
+    font-size: 1rem;
+    text-decoration: none; /* removes underlines from link elements */
+    line-height: 72px; /* increases the line height of each a element, and in turn, increases the whole height of the 'row' class too. */
+    /* each link element will look cenetered because line-height increases vertically, from the center. */
+    color: #ffffff;
+    font-weight: 600;
+    position: relative; /* allows white line under link element to be positioned with reference to this element using position: absolute */
+    display: block; /* converts a link to a block element. takes up whole space of list element */
+}
+
+/* ::before pseudo-class targets the area before the content in the element */
+header .navbar ul li a.active::before { /* adds a little underline under brand name */
+    content: '';
+    height: 3px;
+    background-color: #ffffff;
+    width: 100%; /* refers to width of the link element (the parent element */
+
+    /* positioning the white line */
+    position: absolute; /* allows the creation of this element */
+    left: 0;  /* position from the left of the link element */
+    bottom: -1px; /* line will be positioned -1px away from the bottom element (goes below the bottom edge. not above) */
+
+} 
+
+
+
+
+
+/* || Home Section  */
+#home {
+    min-height: 100vh;
+    background-image: url('/images/circle-cropped.png');
+    background-size: cover;
+    background-position: center;  /* always centers your image according to viewport. therefore making this responsive */
+}
+
+.home .row {
+    background-color: red;
+}

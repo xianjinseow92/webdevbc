@@ -1,0 +1,74 @@
+/* Global Styles  */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:grey;
+}
+
+/* Navbar Styles */
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+/* Brand Styles */
+/* flex-item of navbar */
+.navbrand {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: white;
+}
+
+.navbrand:hover {
+    color: black;
+}
+
+/* Nav Links Styles */
+/* flex-item of navbar */
+nav ul {
+    display: flex;
+    text-align: center;
+    padding-left: 0; /* removes default padding on left side of a ul */
+    justify-content: flex-end;
+    margin: 0 0 0 auto;  /* shift nav links away from brand */
+}
+
+/* flex-item of navbar links */
+.nav-item {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    list-style-type: none;
+    padding: 10px; /* gives links some spacing between each other */
+}
+
+.nav-item:hover {
+    background-color: #555;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* Stacked navbar for mobile devices  */
+@media screen and (max-width: 600px) { /* Styles applied at 600px and below */
+    .navbar {
+        text-align: center; /* centers all elements in navbar */
+        display: block;  /* allows elements to stack on top of each other */
+    }
+
+    .navbar .navbrand {
+        display: inline-block;  /* makes clickable area on brand itself and not the whole width of webpage */
+    }
+
+    .navbar ul {
+        display: block;  /* allows nav links to stack on top of each other */
+        margin: 10px auto;
+    }
+}
