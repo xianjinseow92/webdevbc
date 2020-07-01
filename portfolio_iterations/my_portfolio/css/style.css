@@ -47,10 +47,6 @@ header .brand-name a {
 
 }
 
-header .navbar {   /* navigation list */
-
-}
-
 header .navbar ul { /* the whole unordered list under the ul*/
     list-style: none; /* shorthand for the following properties:
     /* list-style-type | list-style-position | list-style-image */
