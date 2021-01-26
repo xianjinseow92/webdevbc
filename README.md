@@ -222,13 +222,8 @@ These values can be found under `$overflow-values` in `jala-v2/jala-admin/src/sa
 Example Usage:  
 **Overflow**
 ```HTML
-<div class="of-scroll" style="width: 100px; height: 100px;"> 
-  Scroll <br><br><br><br><br> 
-  is enabled if content overflows 
-</div>
-<div class="of-hidden" style="width: 100px; height: 100px;"> 
-  You can see this <br><br><br><br><br> 
-  but not this </div>
+<div class="of-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
+<div class="of-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
 ```
 These overflow classes also come with responsive variations.
 ```HTML
