@@ -183,14 +183,15 @@ These classes can be customized (should it be necessary) by simply editing the `
 
 
 ### Cursor Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+  
 Where _property_ is:
 - cursor for applying cursor properties
 
-Where _propertyValue_ is one of:
-`$cursor-values: alias all-scroll auto cell context-menu col-resize copy crosshair default e-resize ew-resize grab grabbing help move n-resize ne-resize nesw-resize ns-resize nw-resize nwse-resize no-drop none not-allowed pointer progress row-resize s-resize se-resize sw-resize text url w-resize wait zoom-in zoom-out`
+Where _propertyValue_ is one of:  
+- alias all-scroll auto cell context-menu col-resize copy crosshair default e-resize ew-resize grab grabbing help move n-resize ne-resize nesw-resize ns-resize nw-resize nwse-resize no-drop none not-allowed pointer progress row-resize s-resize se-resize sw-resize text url w-resize wait zoom-in zoom-out
 
-This variable can be found in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+These values can be found under `$cursor-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`.
 
 ```HTML
 <div class="cursor-pointer"> Click me! </div>
