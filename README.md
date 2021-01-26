@@ -243,21 +243,23 @@ These overflow classes also come with responsive variations.
 ```
 
 ### Object Fit Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
-Where _property_ is:
-- o-f for applying object-fit 
-
-Where _propertyValue_ is one of:
-- `$object-fit-values: fill contain cover scale-down none;`
-
-Example usage:
-
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+Where _property_ is:  
+- o-f for applying object-fit   
+    
+Where _propertyValue_ is one of:  
+- fill contain cover scale-down none
+     
+These values can be found under `$object-fit-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+  
+**Example usage:**
+```HTML
 <img [src]="project.bannerImageUrl" class="o-f-cover" onError="this.src='../../assets/images/fallback_image_blog.svg'" />
-
+```
 These Object-Fit classes also come with responsive variations.
-
+```HTML
 <img [src]="project.bannerImageUrl" class="o-f-lg-cover" onError="this.src='../../assets/images/fallback_image_blog.svg'" />
-
+```
 
 
 ### Sizing 
