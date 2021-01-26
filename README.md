@@ -3,7 +3,6 @@
 ## Notable changes
 ### Breaking Changes
 1. Renaming of all `left` & `right` classes to `start` & `end` respectively
-  1. Testing numbers out
   - This means `ml`, `mr` becomes `ms`, `me`
   - `text-left`, `text-right` becomes `text-start`, `text-end`
   - `pl`, `pr` becomes `ps`, `pe`
@@ -28,7 +27,7 @@ Good news is that the BS5 documentation is a lot better so it's not difficult to
 4. Forms
   - `.form-group` is now dropped. It will no longer be in use in favor of spacing utility classes like mb-3, etc.
 
-```
+```HTML
 <!-- // Bootstrap 4 -->
 <div class="form-group">
     <label for="email">Email address</label>
