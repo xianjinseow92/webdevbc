@@ -104,14 +104,13 @@ The example bellow illustrates the difference in implementing [an input group wi
     - So for more specific cases, please refer to the [BS5 documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
 
 
-## Jala-specific changes
+## Jala-specific Styles
 ### Buttons
 Jala now has customized styled buttons, including their disabled states.   
 The three main buttons used and how they look, along with their disabled states can be found in the following <a href="https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=382%3A36365">figma link</a>.
 
-
+How these buttons are instiantiated can be found in the example code below:  
 1. Primary buttons
-
 ```HTML
 <button class="btn btn-primary">
 <button class="btn btn-primary disabled">
