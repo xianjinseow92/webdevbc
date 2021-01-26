@@ -1,4 +1,4 @@
-# Bootstrap 5 
+# Migrating from Bootstrap 4 to Bootstrap 5 
 
 ## Notable changes
 ### Breaking Changes
@@ -44,7 +44,7 @@ Good news is that the BS5 documentation is a lot better so it's not difficult to
   - `.input-group-append` and `.input-group-prepend` removed.
   - so now we can just add buttons and `.input-group-text` as children of the input-groups
 
-The example bellow illustrates the difference in implmenting [an input group with a prepend dollar sign and an appended decimal point](https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example) in BS4 and BS5.
+The example bellow illustrates the difference in implementing [an input group with a prepend dollar sign and an appended decimal point](https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example) in BS4 and BS5.
 
 ```HTML
 <!-- // Bootstrap 4 -->
@@ -65,11 +65,13 @@ The example bellow illustrates the difference in implmenting [an input group wit
   <span class="input-group-text">.00</span>
 </div>
 ```
-
+  
+    
 5. Navbars
 - Navbar needs a `.container` now
-- From Bootstrap 5, All navbars now require a container within. This drastically simplifies spacing requirements and removes the need for extensive CSS overrides we added for responsive containers in v4
+- From Bootstrap 5, all navbars now require a container within. This drastically simplifies spacing requirements and removes the need for extensive CSS overrides for responsive containers in v4
 
+```HTML
 <!-- // Bootstrap 4 -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -81,48 +83,51 @@ The example bellow illustrates the difference in implmenting [an input group wit
     <a class="navbar-brand" href="#">Navbar</a>
   </div>
 </nav>
-
+```
+  
+  
 6. Namespaced data attributes
 - Bootstrap HTML attributes to enable javacsript behaviors.
 - In BS5, all attributes renamed from `data-*` to `data-bs-*`
-    - so this will break any `data-toggle"`, `data-target`, `data-dismiss` attributes on our 
+    - so this will break any `data-toggle"`, `data-target`, `data-dismiss` attributes on components we typically use such as 
         - modals
         - accordians 
         - navbars (when screen width becomes to small and navbar becomes a vertical collapsible button instead)
         - nav-tab & tab-content, etc.
-    - this is quite a huge breaking change but moving foward this will keep attribute-naming of Bootstrap separate from any other libraries that we want to use
+    - this is quite a huge breaking change but moving foward this will keep attribute-naming of Bootstrap separate from any other libraries that we might want to use
 
 
 ### Welcome changes
 1. New`.translate-middle-x` & `.translate-middle-y` utilities to horizontally or vertically center absolute/fixed positioned elements.
 
-2. Way more updated things in the BS5 document. Not everythinig is covered here, just the signficant ones of which we might use on a day-to-day basis.
-    - So for more specific cases, please refer to BS5 documentation.
-
-
-
+2. Way more things updated in the BS5 document. Not everything is covered here, just the signficant ones of which we might use on a day-to-day basis.
+    - So for more specific cases, please refer to the [BS5 documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/).
 
 
 ## Jala-specific changes
 ### Buttons
-Jala now has customized styled buttons, including their disabled states. 
-The three main buttons used and how they look can be found in the following <a href="https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=382%3A36365">figma link</a>
+Jala now has customized styled buttons, including their disabled states.   
+The three main buttons used and how they look, along with their disabled states can be found in the following <a href="https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=382%3A36365">figma link</a>.
 
 
 1. Primary buttons
+
+```HTML
 <button class="btn btn-primary">
 <button class="btn btn-primary disabled">
+```
 
-
+```HTML
 2. Secondary buttons
 <button class="btn btn-outline-dark">
 <button class="btn btn-outline-dark disabled">
-
+```
 
 3. Tertiary buttons
+```HTML
 <button class="btn btn-link">
 <button class="btn btn-link disabled">
-
+```
 
 ### Custom Icons
 There are custom icons that jala admin uses because fontawesome is not shippped with these icons.  
