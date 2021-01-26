@@ -298,8 +298,21 @@ Where _propertyValue_ is one of:
 
 These values can be found under `$white-space-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
+```HTML
+<div class="w-s-pre">
+  This will
+  preserve
+  the linebreaks
+  in the div.
+</div>
 
-## Future Classes and changes to be done
+<div class="w-s-nowrap">
+  This really long line of text will not wrap at all I'm serious it really won't wrap and it will just break through your div like boom unless your screenwidth is super long then ok it won't.
+<div>
+```
+
+
+## Future Classes to implement and Component styling to be done
 1. Font-sizing utility classes customized to jala layout
 2. Line-height utility classes customized to jala layout
 3. Custom styling for 
