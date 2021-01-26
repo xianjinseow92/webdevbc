@@ -219,7 +219,7 @@ Where _propertyValue_ is one of:
 
 These values can be found under `$overflow-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
-Example Usage:  
+**Example Usage:**  
 **Overflow**
 ```HTML
 <div class="of-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
