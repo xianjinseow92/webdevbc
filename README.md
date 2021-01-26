@@ -20,11 +20,13 @@
     - Important because htis 
     - renamed `.close` to `.btn-close` for less generic name    
   
-So sometimes when you try to apply a class that might previously have worked in BS4, but suddenly not working in BS5 anymore, high chance that the class name has changed
+So sometimes when you try to apply a class in BS5 that previously worked in BS4, there is high chance that the class name has changed.  
+Good news is that the BS5 documentation is a lot better so it's not difficult to search up the appropriate class for what you're trying to do.  
 
 4. Forms
-- `.form-group` is now dropped. It will no longer be in use in favor of spacing utility classes like mb-3, etc.
+    - `.form-group` is now dropped. It will no longer be in use in favor of spacing utility classes like mb-3, etc.
 
+```
 <!-- // Bootstrap 4 -->
 <div class="form-group">
     <label for="email">Email address</label>
@@ -36,6 +38,7 @@ So sometimes when you try to apply a class that might previously have worked in 
     <label for="email" class="form-label">Email address</label>
     <input type="email" class="form-control" id="email" placeholder="...">
 </div>
+```
 
 - `.input-group-append` and `.input-group-prepend` removed.
 - so now we can just add buttons and `.input-group-text` as children of the input-groups
