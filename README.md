@@ -44,9 +44,9 @@ Good news is that the BS5 documentation is a lot better so it's not difficult to
   - `.input-group-append` and `.input-group-prepend` removed.
   - so now we can just add buttons and `.input-group-text` as children of the input-groups
 
-For example, previously to create this:
-/Users/xianjinseow/Desktop/Screenshot 2021-01-26 at 2.46.16 PM.png
+For example, previously to create [the input group with the dollar sign and decimals (forth input from the top) in this BS5 example](https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example)
 
+```HTML
 <!-- // Bootstrap 4 -->
 <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -64,6 +64,7 @@ For example, previously to create this:
   <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
   <span class="input-group-text">.00</span>
 </div>
+```
 
 5. Navbars
 - Navbar needs a `.container` now
