@@ -3,24 +3,24 @@
 ## Notable changes
 ### Breaking Changes
 1. Renaming of all `left` & `right` classes to `start` & `end` respectively
-  - This means `ml`, `mr` becomes `ms`, `me`
-  - `text-left`, `text-right` becomes `text-start`, `text-end`
-  - `pl`, `pr` becomes `ps`, `pe`
-  - breakpoint-specific variants are also renamed, `text-md-left` becomes `text-md-start`
-  - **IMPORTANT**
-      - means that even dropdown menus are affected
-      - `.dropleft` becomes `.dropstart`
-      - `.dropright` becomes `.dropend`
+    - This means `ml`, `mr` becomes `ms`, `me`
+    - `text-left`, `text-right` becomes `text-start`, `text-end`
+    - `pl`, `pr` becomes `ps`, `pe`
+    - breakpoint-specific variants are also renamed, `text-md-left` becomes `text-md-start`
+    - **IMPORTANT**
+        - means that even dropdown menus are affected
+        - `.dropleft` becomes `.dropstart`
+        - `.dropright` becomes `.dropend`
 
 2. Some classes have been renamed to become more succinct
-  - `font-weight-*` becomes `fw-*`
-  - `font-style-*` becomes `fst-*`
+    - `font-weight-*` becomes `fw-*`
+    - `font-style-*` becomes `fst-*`
 
 3. Close buttons
-  - Important because htis 
-  - renamed `.close` to `.btn-close` for less generic name
-
-- so sometimes when you try to apply a class that might previously have worked in BS4, but suddenly not working in BS5 anymore, high chance that the class name has changed
+    - Important because htis 
+    - renamed `.close` to `.btn-close` for less generic name    
+  
+So sometimes when you try to apply a class that might previously have worked in BS4, but suddenly not working in BS5 anymore, high chance that the class name has changed
 
 4. Forms
 - `.form-group` is now dropped. It will no longer be in use in favor of spacing utility classes like mb-3, etc.
