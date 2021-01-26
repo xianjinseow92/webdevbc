@@ -3,6 +3,7 @@
 ## Notable changes
 ### Breaking Changes
 1. Renaming of all `left` & `right` classes to `start` & `end` respectively
+  1. Testing numbers out
   - This means `ml`, `mr` becomes `ms`, `me`
   - `text-left`, `text-right` becomes `text-start`, `text-end`
   - `pl`, `pr` becomes `ps`, `pe`
