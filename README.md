@@ -154,12 +154,33 @@ Some of these icons have disabled versions, of which appending `-disabled` to th
 To facilitate a more intuitive use of spacing utilities as per typical padding / margin spacings in jala, the number appended to the padding / margin class has been changed to reflect the **_actual_** pixel value to be applied.
 
 Previously:  
-`ml-5 -> margin-left: 30px;`
+`.ml-5 -> margin-left: 30px;`
 
-Currently  
-`ms-30 -> margin-left: 30px;`  
+Currently:  
+`.ms-30 -> margin-left: 30px;`  
 
-These pixel values increase in multiples of 5 all the way to 100, and these classes can be customized (should it be necessary) by simply changing the `$custom-padding-margin-spacers` map in jala-v2/jala-admin/src/sass/_custom-variables.scss
+Classes are named using the format `{property}{side}-{size}` for xs breakpoint and `{property}{side}-{breakpoint}-{size}` for sm, md, lg, xl and xxl breakpoints.
+
+Where _property_ is one of: 
+- m for classes that set **margin**
+- p for classes that set **padding**
+
+Where _side_ is one of:
+- t - for classes that set **margin-top** or **padding-top**
+- b - for classes that set **margin-bottom** or **padding-bottom**
+- s - for classes that set **margin-left** or **padding-left**
+- e - for classes that set **margin-right** or **padding-right**
+- x - for classes that set both **margin-left**, **margin-right** or **padding-left**, **padding-right**
+- y - for classes that set both **margin-top**, **margin-bottom** or **padding-top**, **padding-bottom**
+- blank - for classes that set a margin or padding on all 4 sides of the element
+
+Where _size_ is one of:
+- 0 - for classes that eliminate the margin / padding by setting it to 0
+- 1 all the way to 9 for classes that set the margin or padding from 1 all the way to 9 pixels
+- 10 all the way to 100, **in increments of 5** for classes that set the margin or padding from 10 all the way to 100, **in increments of 5**, pixels
+  
+
+These classes can be customized (should it be necessary) by simply changing the `$custom-padding-margin-spacers` map in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
 
 ### Cursor Classes
