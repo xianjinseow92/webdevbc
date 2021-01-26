@@ -207,37 +207,40 @@ These cursor classes also come with responsive variations.
 
 
 ### Overflow Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+  
 Where _property_ is:
 - of for applying overflow 
 - of-x for applying overflow in x-direction
 - of-y for applying overflow in y-direction
 
-Where _propertyValue_ is one of:
-`$overflow-values: scroll hidden auto visible initial inherit;`
+Where _propertyValue_ is one of:  
+- scroll hidden auto visible initial inherit
 
-This variable can be found in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+These values can be found under `$overflow-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
-Example Usage:
+Example Usage:  
 **Overflow**
-
+```HTML
 <div class="of-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
 <div class="of-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
-
+```
 These overflow classes also come with responsive variations.
-
+```HTML
 <div class="of-lg-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
 <div class="of-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
-
+```
 
 **Overflow-x / Overflow-y**
-
+```HTML
+<!-- Overflow x -->
 <div class="of-x-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
 <div class="of-x-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
 
+<!-- Overflow y -->
 <div class="of-y-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
 <div class="of-y-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
-
+```
 
 ### Object Fit Classes
 Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
