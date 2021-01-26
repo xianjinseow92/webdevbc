@@ -183,7 +183,7 @@ These classes can be customized (should it be necessary) by simply editing the `
 
 
 ### Cursor Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+Classes are named using the format `{property}-{propertyValue}` for xs breakpoint and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl breakpoints.  
   
 Where _property_ is:
 - cursor for applying cursor properties
@@ -207,7 +207,7 @@ These cursor classes also come with responsive variations.
 
 
 ### Overflow Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+Classes are named using the format `{property}-{propertyValue}` for xs breakpoint and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl breakpoints.  
   
 Where _property_ is:
 - of for applying overflow 
@@ -243,7 +243,7 @@ These overflow classes also come with responsive variations.
 ```
 
 ### Object Fit Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Classes are named using the format `{property}-{propertyValue}` for xs breakpoint and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl breakpoints.
     
 Where _property_ is:  
 - o-f for applying object-fit   
@@ -265,7 +265,7 @@ These Object-Fit classes also come with responsive variations.
 
 ### Sizing 
 #### Width and Height classes
-Classes are named using the format `{property}-{size}` for xs and `{property}-{breakpoint}-{size}` for sm, md, lg, xl and xxl.  
+Classes are named using the format `{property}-{size}` for xs breakpoint and `{property}-{breakpoint}-{size}` for sm, md, lg, xl and xxl breakpoints.  
   
 Where _property_ is one of:
 - h - for classes that set height
