@@ -316,6 +316,6 @@ These values can be found under `$white-space-values` in `jala-v2/jala-admin/src
 1. Font-sizing utility classes customized to jala layout
 2. Line-height utility classes customized to jala layout
 3. Custom styling for 
-    - input:text
-    - modal padding and margins
+    - input elements, it's placeholders and etc.
+    - modal custom padding and margins
     - custom toasts
