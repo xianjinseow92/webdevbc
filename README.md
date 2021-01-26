@@ -44,7 +44,7 @@ Good news is that the BS5 documentation is a lot better so it's not difficult to
   - `.input-group-append` and `.input-group-prepend` removed.
   - so now we can just add buttons and `.input-group-text` as children of the input-groups
 
-For example, previously to create [the input group with the dollar sign and decimals (forth input from the top) in this BS5 example](https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example)
+The example bellow illustrates the difference in implmenting [an input group with a prepend dollar sign and an appended decimal point](https://getbootstrap.com/docs/5.0/forms/input-group/#basic-example) in BS4 and BS5.
 
 ```HTML
 <!-- // Bootstrap 4 -->
