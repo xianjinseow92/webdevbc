@@ -265,7 +265,8 @@ These Object-Fit classes also come with responsive variations.
 
 ### Sizing 
 #### Width and Height classes
-Classes are named using the format `{property}-{size}` for xs and `{property}-{breakpoint}-{size}` for sm, md, lg, xl and xxl.
+Classes are named using the format `{property}-{size}` for xs and `{property}-{breakpoint}-{size}` for sm, md, lg, xl and xxl.  
+  
 Where _property_ is one of:
 - h - for classes that set height
 - w - for classes that set width
@@ -273,8 +274,10 @@ Where _property_ is one of:
 Where _size_ represents percentage which ranges from:
 - 5 to 100, increments of 5
 
-Example usage:
+These size values can be found under `$sizes-percentage` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
+**Example usage:**
+```HTML
 <div class="w-25">There is some content here</div>
 <div class="w-100">There is some content here</div>
 <div class="w-md-50">There is some content here</div>
@@ -282,16 +285,18 @@ Example usage:
 <div class="h-25">There is some content here</div>
 <div class="h-100">There is some content here</div>
 <div class="h-md-50">There is some content here</div>
-
+```
 
 ### Whitespace
-Classes are named using the format `{property}-{propertyValue}`. There are no breakpoint responsive classes for whitespace
+Classes are named using the format `{property}-{propertyValue}`. There are no breakpoint responsive classes for whitespace.  
+  
 Where _property_ is:
 - w-s for classes that set white-space
 
-Where _propertyValue_ is:
-`$white-space-values: normal nowrap pre pre-line pre-wrap initial inherit;`
+Where _propertyValue_ is one of:
+- normal nowrap pre pre-line pre-wrap initial inherit
 
+These values can be found under `$white-space-values` in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
 
 ## Future Classes and changes to be done
