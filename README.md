@@ -3,19 +3,22 @@
 ## Notable changes
 ### Breaking Changes
 1. Renaming of all `left` & `right` classes to `start` & `end` respectively
-    - This means `ml`, `mr` becomes `ms`, `me`
-    - `text-left`, `text-right` becomes `text-start`, `text-end`
-    - `pl`, `pr` becomes `ps`, `pe`
-    - breakpoint-specific variants are also renamed, `text-md-left` becomes `text-md-start`
-    - **IMPORTANT**
-        - means that our `.dropleft` and `.dropright` to `.dropstart` and `.dropend`
+  - This means `ml`, `mr` becomes `ms`, `me`
+  - `text-left`, `text-right` becomes `text-start`, `text-end`
+  - `pl`, `pr` becomes `ps`, `pe`
+  - breakpoint-specific variants are also renamed, `text-md-left` becomes `text-md-start`
+  - **IMPORTANT**
+      - means that even dropdown menus are affected
+      - `.dropleft` becomes `.dropstart`
+      - `.dropright` becomes `.dropend`
 
-2. Renaming of classes to become more succinct
-    - `font-weight-*` becomes `fw-*`
-    - `font-style-*` becomes `fst-*`
+2. Some classes have been renamed to become more succinct
+  - `font-weight-*` becomes `fw-*`
+  - `font-style-*` becomes `fst-*`
 
 3. Close buttons
-    - renamed `.close` to `.btn-close` for less generic name
+  - Important because htis 
+  - renamed `.close` to `.btn-close` for less generic name
 
 - so sometimes when you try to apply a class that might previously have worked in BS4, but suddenly not working in BS5 anymore, high chance that the class name has changed
 
