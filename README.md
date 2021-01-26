@@ -307,7 +307,7 @@ These values can be found under `$white-space-values` in `jala-v2/jala-admin/src
 </div>
 
 <div class="w-s-nowrap">
-  This really long line of text will not wrap at all I'm serious it really won't wrap and it will just break through your div like boom unless your screenwidth is super long then ok it won't.
+  This really long line of text will not wrap at all I'm serious it really won't wrap and it will just break through your div like boom unless your screen width is super long then ok it won't.
 <div>
 ```
 
