@@ -1,95 +1,258 @@
-# Web Development
+# Bootstrap 5 
 
-This github repo serves as a storage for XJ to migrate his work between his laptop and his desktop, as well as to track changes over his progression.
+## Notable changes
+### Breaking Changes
+1. Renaming of all `left` & `right` classes to `start` & `end` respectively
+    - This means `ml`, `mr` becomes `ms`, `me`
+    - `text-left`, `text-right` becomes `text-start`, `text-end`
+    - `pl`, `pr` becomes `ps`, `pe`
+    - breakpoint-specific variants are also renamed, `text-md-left` becomes `text-md-start`
+    - **IMPORTANT**
+        - means that our `.dropleft` and `.dropright` to `.dropstart` and `.dropend`
 
-<div id='corgi' align='center'>
-    <img src="./images/cute doggo.jpg" alt="cute corgi" width=30%>   
+2. Renaming of classes to become more succinct
+    - `font-weight-*` becomes `fw-*`
+    - `font-style-*` becomes `fst-*`
+
+3. Close buttons
+    - renamed `.close` to `.btn-close` for less generic name
+
+- so sometimes when you try to apply a class that might previously have worked in BS4, but suddenly not working in BS5 anymore, high chance that the class name has changed
+
+4. Forms
+- `.form-group` is now dropped. It will no longer be in use in favor of spacing utility classes like mb-3, etc.
+
+<!-- // Bootstrap 4 -->
+<div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="...">
 </div>
 
+<!-- // Bootstrap 5 -->
+<div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="...">
+</div>
 
-<h1>Web Developer Tools</h1>
+- `.input-group-append` and `.input-group-prepend` removed.
+- so now we can just add buttons and `.input-group-text` as children of the input-groups
 
-<h2>Skill Upgrade</h2>
-<ol>
-    <li><a href='https://www.dailyui.co/'>DailyUI</a>: Gives you a task to design a UI everyday!</li>
-    <li><a href='https://www.frontendmentor.io/'>Frontend Mentor</a>: Gives you a task of building a website. Builds front-end skills</li>
-</ol>
+For example, previously to create this:
+/Users/xianjinseow/Desktop/Screenshot 2021-01-26 at 2.46.16 PM.png
 
-<h2>Gathering Inspiration for Website Design</h2>
-<ol>
-    <li><a href='https://ui-patterns.com/patterns'>UI Patterns</a>: Different UIs for different types of website functionality (carousell, etc.)</li>
-    <li><a href="https://www.dribbble.com">Dribbble</a>: Check out other people's websites. Can even search for websites by shade of color.</li>
-</ol>
+<!-- // Bootstrap 4 -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <div class="input-group-append">
+    <span class="input-group-text">.00</span>
+  </div>
+</div>
 
+<!-- // Bootstrap 5 -->
+<div class="input-group mb-3">
+  <span class="input-group-text">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-text">.00</span>
+</div>
 
-<h2>WireFraming</h2>
+5. Navbars
+- Navbar needs a `.container` now
+- From Bootstrap 5, All navbars now require a container within. This drastically simplifies spacing requirements and removes the need for extensive CSS overrides we added for responsive containers in v4
 
-<ol>
-    <li><a href='https://www.sneakpeekit.com'>Downloadable Templates for Browsers, Mobile, Tablets</a>: Can be downloaded onto paper to be drawn on (wireframing)</li>
-</ol>
+<!-- // Bootstrap 4 -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
 
-<h2>Graphics/Designing your Website</h2>
-<ol>
-    <li><a href='https://bootsnipp.com/'>Bootsnip</a>: For Bootstrap Code snippets of various parts of a website (login, pricing page, etc.)</li>
-    <li><a href='https://fontawesome.com'>FontAwesome</a>: Over 900 icons free for commercial use (apple icon, download icon, play icon, etc)</li>
-    <li><a href="https://www.favicon.cc/">FavIcon</a>: Create icons for your site (shown on your browser tab beside your webpage title)</li>
-    <li><a href='https://www.cssfontstack.com/'>Web-Safe Fonts!</a>: To ensure that your users are seeing similar fonts to what you want to render should they not have the font on their OS</li>
-    <li><a href='https://fonts.google.com/'>Font Embedding</a>: To ensure that your users will see your font no matter what</li>
-    <li><a href='https://www.canva.com/colors/color-wheel/'>Color Wheel</a>: For understanding what colors are complementary to each other, and how to combine a color with another color.
-        <ul>
-            <li>Triadic (Balanced, 90s feel), Monochromatic (Balanced, Modern), Complementary (Flashy), Analogous (Harmonious designs)</li>
-            <li>Creating Harmonious-looking Designs: <br>One of the tips is to use an <strong>adjacent</strong> color to the color you're selecting in the color wheel.
-            Good for background screens/main interface of your app. Pleasant to look at for a long time.</li>
-            <li>Creating Flashy/Attention-grabbing Designs:<br>Use complementary colors (opp. colors in the color wheel) for flashy logos</li>
-        </ul>
-    <li><a href='https://uxplanet.org/create-emotion-with-color-in-ux-design-446a3766b085#.833er7ned'>Explanation on how to create Emotion with Color</a></li>
-    </li>
-    <li>**Tools** for Choosing a Color 'cause you're lazy and have no time 
-        <ul>
-            <li><a href='https://colorhunt.co/'>ColorHunt</a>: Choose Color Palettes</li>
-            <li><a href='https://flatuicolors.com/'>FlatUIColors</a>: Color Palette for iOS Platform</li>
-            <li><a href='https://www.materialpalette.com/'>MaterialPalette</a>: Designing Color Palette for Andriod AND Downloadable Icons!!</li>
-            <li><a href='https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp/related'>ColorZilla</a>: Chrome/Firefox extension color dropper. Allows you to check HEX Code of colors on websites </li>
-        </ul>
-    </li>
-    <li>Fonts
-        <ul>
-            <li><a href='https://uxplanet.org/create-emotion-with-color-in-ux-design-446a3766b085#.833er7ned'>WhatFont</a>: Spy on fonts used in a webpage</li>
-        </ul>
-    </li>
-</ol>
+<!-- // Bootstrap 5 -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </div>
+</nav>
 
-<h2>Before publishing your website</h2>
-<ol>
-    <li><a href='https://search.google.com/test/mobile-friendly'>Test for mobile friendliness</a>: Because an mobile-unfriendly website affects it's google ranking. And let's face it, nobody's gonna go through pages 2-3 of the google search page.</li>
-    <li><a href='https://www.minifier.org/'>Minifier</a>: Minifies your Javacsript code to save some bytes (removes comments, newlines, spaces)</li>
-</ol>
+6. Namespaced data attributes
+- Bootstrap HTML attributes to enable javacsript behaviors.
+- In BS5, all attributes renamed from `data-*` to `data-bs-*`
+    - so this will break any `data-toggle"`, `data-target`, `data-dismiss` attributes on our 
+        - modals
+        - accordians 
+        - navbars (when screen width becomes to small and navbar becomes a vertical collapsible button instead)
+        - nav-tab & tab-content, etc.
+    - this is quite a huge breaking change but moving foward this will keep attribute-naming of Bootstrap separate from any other libraries that we want to use
 
 
-<h2>Debugging</h2>
+### Welcome changes
+1. New`.translate-middle-x` & `.translate-middle-y` utilities to horizontally or vertically center absolute/fixed positioned elements.
 
-1. Chrome Developer Tool (Right click -> Inspect -> Console, check for errors)
-<h2>VisualStudio Code</h2>
-<ol>
-    <li><a href="https://docs.google.com/document/d/1eltxPSyGRFjN0Bc2ClCTOQmj_5mDq_8Go5GnL25qt04/edit">VisualCode Extensions</a></li>
-</ol>
-
-<h2>Extensions</h2>
-<ol>
-    <li><a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">Pesticide</a>: Allows you to see all boxes on current webpage</li>
-    <li><a href='https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg/related'>HTML Tree Generator</a>: Allows you to visualize what browser does when it turns your HTML code into a DOM tree.</li>
-    <li><a href='https://www.wappalyzer.com/download'>Wappalyzer</a>: Analyze what tools a website is using.</li>
-</ol>
+2. Way more updated things in the BS5 document. Not everythinig is covered here, just the signficant ones of which we might use on a day-to-day basis.
+    - So for more specific cases, please refer to BS5 documentation.
 
 
-<h2>Useful Resources</h2>
 
-1. <a href="https://www.appbrewery.co/p/web-development-course-resources/" alt="Resources to each Lesson" title="Resources to each Lesson">WebDevBC Resources Link</a>
 
-2. <a href="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" alt="HTML Cheatsheet" title="Standford HTML Cheatsheet">Stanford HTML Cheatsheet</a>
 
-3. Joel Spolsky on <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">the absolute minimum any developer needs to know about unicode</a>
+## Jala-specific changes
+### Buttons
+Jala now has customized styled buttons, including their disabled states. 
+The three main buttons used and how they look can be found in the following <a href="https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=382%3A36365">figma link</a>
 
-4. <a href="http://www.pascalvangemert.nl/#/profile">Nice Interactive Online CV</a>
 
-5. <a href="https://devdocs.io">HTML Attributes Daily Study</a>
+1. Primary buttons
+<button class="btn btn-primary">
+<button class="btn btn-primary disabled">
+
+
+2. Secondary buttons
+<button class="btn btn-outline-dark">
+<button class="btn btn-outline-dark disabled">
+
+
+3. Tertiary buttons
+<button class="btn btn-link">
+<button class="btn btn-link disabled">
+
+
+### Custom Icons
+There are custom icons that jala admin uses because fontawesome is not shippped with these icons.  
+They are webfonts so we can use them as per how fontawesome icons are used (can be colored, styled, change size via font-size).  
+
+- All these icons can be found in the figma file: https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=1299%3A123637   
+- All these icons' classes can be found in the folder (jala-v2/jala-admin/src/sass/_custom-icons.scss), and the class names are similar to the names of the icons in the figma file above.
+
+Note: 
+Must use `<span></span>`, instead of our usual `<i></i>` elements
+
+Example usage:
+<span class="icon-ji-unflag"></span>
+
+
+Some of these icons have disabled versions, of which we will append a `-disabled` to the end of the base icon class, as demonstrated below.
+<span class="icon-ji-comment"></span>
+<span class="icon-ji-comment-disabled"></span>
+
+### Spacing Utilities
+To facilitate a more intuitive use of spacing utilities as per typical padding / margin spacings in jala, the number appended to the padding / margin class has been changed to reflect the actual pixel value to be applied.
+
+Previously:
+ml-5 -> margin-left: 30px;
+
+Currently
+ms-30 -> margin-left: 30px;  
+
+These pixel values increase in multiples of 5 all the way to 100, and these classes can be customized (should it be necessary) by simply changing the `$custom-padding-margin-spacers` map in jala-v2/jala-admin/src/sass/_custom-variables.scss
+
+
+### Cursor Classes
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Where _property_ is:
+- cursor for applying cursor properties
+
+Where _propertyValue_ is one of:
+`$cursor-values: alias all-scroll auto cell context-menu col-resize copy crosshair default e-resize ew-resize grab grabbing help move n-resize ne-resize nesw-resize ns-resize nw-resize nwse-resize no-drop none not-allowed pointer progress row-resize s-resize se-resize sw-resize text url w-resize wait zoom-in zoom-out`
+
+This variable can be found in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+
+
+<div class="cursor-pointer"> Click me! </div>
+<div class="cursor-grab"> I can be grabbed! </div>
+
+These cursor classes also come with responsive variations.  
+
+<div class="cursor-md-pointer"> I'm only a pointer at above md: 768px screen sizes! </div>
+<div class="cursor-xxl-grab"> I'm only a grab cursor at above xxl: 1400px screen sizes! </div>
+
+
+
+### Overflow Classes
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Where _property_ is:
+- of for applying overflow 
+- of-x for applying overflow in x-direction
+- of-y for applying overflow in y-direction
+
+Where _propertyValue_ is one of:
+`$overflow-values: scroll hidden auto visible initial inherit;`
+
+This variable can be found in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+
+Example Usage:
+**Overflow**
+
+<div class="of-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
+<div class="of-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
+
+These overflow classes also come with responsive variations.
+
+<div class="of-lg-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
+<div class="of-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
+
+
+**Overflow-x / Overflow-y**
+
+<div class="of-x-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
+<div class="of-x-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
+
+<div class="of-y-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
+<div class="of-y-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
+
+
+### Object Fit Classes
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+Where _property_ is:
+- o-f for applying object-fit 
+
+Where _propertyValue_ is one of:
+- `$object-fit-values: fill contain cover scale-down none;`
+
+Example usage:
+
+<img [src]="project.bannerImageUrl" class="o-f-cover" onError="this.src='../../assets/images/fallback_image_blog.svg'" />
+
+These Object-Fit classes also come with responsive variations.
+
+<img [src]="project.bannerImageUrl" class="o-f-lg-cover" onError="this.src='../../assets/images/fallback_image_blog.svg'" />
+
+
+
+### Sizing 
+#### Width and Height classes
+Classes are named using the format `{property}-{size}` for xs and `{property}-{breakpoint}-{size}` for sm, md, lg, xl and xxl.
+Where _property_ is one of:
+- h - for classes that set height
+- w - for classes that set width
+
+Where _size_ represents percentage which ranges from:
+- 5 to 100, increments of 5
+
+Example usage:
+
+<div class="w-25">There is some content here</div>
+<div class="w-100">There is some content here</div>
+<div class="w-md-50">There is some content here</div>
+
+<div class="h-25">There is some content here</div>
+<div class="h-100">There is some content here</div>
+<div class="h-md-50">There is some content here</div>
+
+
+### Whitespace
+Classes are named using the format `{property}-{propertyValue}`. There are no breakpoint responsive classes for whitespace
+Where _property_ is:
+- w-s for classes that set white-space
+
+Where _propertyValue_ is:
+`$white-space-values: normal nowrap pre pre-line pre-wrap initial inherit;`
+
+
+
+## Future Classes and changes to be done
+1. Font-sizing utility classes customized to jala layout
+2. Line-height utility classes customized to jala layout
+3. Custom styling for 
+    - input:text
+    - modal padding and margins
+    - custom toasts
