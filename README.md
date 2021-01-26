@@ -243,7 +243,8 @@ These overflow classes also come with responsive variations.
 ```
 
 ### Object Fit Classes
-Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.  
+Classes are named using the format `{property}-{propertyValue}` for xs and `{property}-{breakpoint}-{propertyValue}` for sm, md, lg, xl and xxl.
+    
 Where _property_ is:  
 - o-f for applying object-fit   
     
