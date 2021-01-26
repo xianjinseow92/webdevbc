@@ -192,15 +192,17 @@ Where _propertyValue_ is one of:
 
 This variable can be found in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
-
+```HTML
 <div class="cursor-pointer"> Click me! </div>
 <div class="cursor-grab"> I can be grabbed! </div>
+```
 
 These cursor classes also come with responsive variations.  
 
+```HTML
 <div class="cursor-md-pointer"> I'm only a pointer at above md: 768px screen sizes! </div>
 <div class="cursor-xxl-grab"> I'm only a grab cursor at above xxl: 1400px screen sizes! </div>
-
+```
 
 
 ### Overflow Classes
