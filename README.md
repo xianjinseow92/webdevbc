@@ -133,11 +133,11 @@ The three main buttons used and how they look, along with their disabled states 
 There are custom icons that jala admin uses because they are not shipped with fontawesome.    
 They are webfonts so we can use them as per how we typically use fontawesome icons (can be colored, styled, change size via font-size).  
 
-- All these icons can be found in this [figma link](https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=1299%3A123637)
-- All these icons' classes can be found in the folder, jala-v2/jala-admin/src/sass/_custom-icons.scss, and the class names are similar to the names of the icons in the figma file above.
+- All these icons can be found in [this figma link](https://www.figma.com/file/9xr58onGz7aG9bs03zJ8SJ/Developers-Admin-3.0?node-id=1299%3A123637)
+- All these icons' classes can be found in the folder `jala-v2/jala-admin/src/sass/_custom-icons.scss`, with the class names similar to the names of the icons found in the figma link above.
 
 **Note:**    
-Must use `<span></span>`, instead the usual `<i></i>` elements to render these icons
+Must use `<span></span>` elements instead the usual `<i></i>` elements to render these icons.
 
 **Example usage**
 ```HTML
@@ -151,13 +151,13 @@ Some of these icons have disabled versions, of which appending `-disabled` to th
 ```
 
 ### Spacing Utilities
-To facilitate a more intuitive use of spacing utilities as per typical padding / margin spacings in jala, the number appended to the padding / margin class has been changed to reflect the actual pixel value to be applied.
+To facilitate a more intuitive use of spacing utilities as per typical padding / margin spacings in jala, the number appended to the padding / margin class has been changed to reflect the **_actual_** pixel value to be applied.
 
-Previously:
-ml-5 -> margin-left: 30px;
+Previously:  
+`ml-5 -> margin-left: 30px;`
 
-Currently
-ms-30 -> margin-left: 30px;  
+Currently  
+`ms-30 -> margin-left: 30px;`  
 
 These pixel values increase in multiples of 5 all the way to 100, and these classes can be customized (should it be necessary) by simply changing the `$custom-padding-margin-spacers` map in jala-v2/jala-admin/src/sass/_custom-variables.scss
 
