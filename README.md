@@ -171,15 +171,15 @@ Where _side_ is one of:
 - e - for classes that set **margin-right** or **padding-right**
 - x - for classes that set both **margin-left**, **margin-right** or **padding-left**, **padding-right**
 - y - for classes that set both **margin-top**, **margin-bottom** or **padding-top**, **padding-bottom**
-- blank - for classes that set a margin or padding on all 4 sides of the element
+- blank - for classes that set a margin or padding on **all 4 sides** of the element
 
 Where _size_ is one of:
 - 0 - for classes that eliminate the margin / padding by setting it to 0
-- 1 all the way to 9 for classes that set the margin or padding from 1 all the way to 9 pixels
-- 10 all the way to 100, **in increments of 5** for classes that set the margin or padding from 10 all the way to 100, **in increments of 5**, pixels
+- 1 all the way to 9 - for classes that set the margin or padding from 1 all the way to 9 pixels
+- 10 all the way to 100, **in increments of 5**, - classes that set the margin or padding from 10 all the way to 100, **in increments of 5**, pixels
   
 
-These classes can be customized (should it be necessary) by simply changing the `$custom-padding-margin-spacers` map in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
+These classes can be customized (should it be necessary) by simply editing the `$custom-padding-margin-spacers` map in `jala-v2/jala-admin/src/sass/_custom-variables.scss`
 
 
 ### Cursor Classes
