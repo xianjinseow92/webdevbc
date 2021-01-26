@@ -39,9 +39,8 @@ Good news is that the BS5 documentation is a lot better so it's not difficult to
     <input type="email" class="form-control" id="email" placeholder="...">
 </div>
 ```
-
-- `.input-group-append` and `.input-group-prepend` removed.
-- so now we can just add buttons and `.input-group-text` as children of the input-groups
+    - `.input-group-append` and `.input-group-prepend` removed.
+    - so now we can just add buttons and `.input-group-text` as children of the input-groups
 
 For example, previously to create this:
 /Users/xianjinseow/Desktop/Screenshot 2021-01-26 at 2.46.16 PM.png
