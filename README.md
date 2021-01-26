@@ -231,7 +231,7 @@ These overflow classes also come with responsive variations.
 <div class="of-xxl-hidden" style="width: 100px; height: 100px;"> You can see this <br><br><br><br><br> but not this </div>
 ```
 
-**Overflow-x / Overflow-y, and their breakpoint-responsive variations**
+**Overflow-x / Overflow-y, and their responsive variations**
 ```HTML
 <!-- Overflow x -->
 <div class="of-x-scroll" style="width: 100px; height: 100px;"> Scroll <br><br><br><br><br> is enabled if content overflows </div>
