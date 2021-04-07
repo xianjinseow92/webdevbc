@@ -1,4 +1,7 @@
-// Accessing the local file system
-const fs = require("fs");
+var superheroes = require("superheroes"); // import module
+var supervillains = require("supervillains");
 
-fs.copyFileSync("file1.txt", "file2.txt");
+var myHero = superheroes.random();
+var villainToFight = supervillains.random();
+
+console.log(`${myHero} is battling ${villainToFight}!`);
