@@ -1,3 +1,6 @@
+import MeetupList from '../components/meetups/MeetupList';
+import MeetupItem from '../components/meetups/MeetupItem';
+
 const DUMMY_DATA = [
   {
     id: "m1",
@@ -25,19 +28,11 @@ function AllMeetupsPage() {
    * Use router package to define when which page should be loaded
    */
   return (
-      <section>
-          <h1>All  Meetups</h1>
-          {/* List of meetups */}
-          <ul>
-            {/* Meetup items */}
-            {DUMMY_DATA.map((meetup) => {
-                return (
-                    <li key={meetup.id}>{meetup.title}</li>
-                )
-            })}
-          </ul>
-          
-      </section>
+    <section>
+      <h1>All Meetups</h1>
+      {/* List of meetups */}
+      <MeetupList meetup={DUMMY_DATA}/>
+    </section>
   );
 }
 
