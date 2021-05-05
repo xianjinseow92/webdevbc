@@ -14,11 +14,11 @@ function MainNavigation() {
             </li>
             <li>
                 {/* These link components allow us to switch components on the website without reloading the whole webpage */}
-                <Link to="/new-meetup">New Meetups</Link>
+                <Link to="/new-meetup">Add New Meetups</Link>
             </li>
             <li>
                 {/* These link components allow us to switch components on the website without reloading the whole webpage */}
-                <Link to="/favorites">Favorites</Link>
+                <Link to="/favorites">My Favorites</Link>
             </li>
         </ul>
       </nav>
