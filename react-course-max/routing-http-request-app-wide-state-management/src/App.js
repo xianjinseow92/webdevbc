@@ -1,16 +1,17 @@
 import { Route, Switch } from "react-router-dom"; // defines different paths in the url to listen to and which components should be loaded for these paths
 
+
+// Components
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
-import MainNavigation from "./components/layout/MainNavigation";
+
+// Layout-related Components
+import Layout from './components/layout/Layout'
 
 function App() {
   return (
-    <div>
-    {/* Navigation */}
-    <MainNavigation/>
-
+    <Layout>
     {/* Pages to load */}
       <Switch>
         <Route path="/" exact>
@@ -25,7 +26,7 @@ function App() {
           <FavoritesPage />
         </Route>
       </Switch>
-    </div>
+    </Layout>
   );
 }
 
