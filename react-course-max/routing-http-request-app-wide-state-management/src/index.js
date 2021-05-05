@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import './index.css';
-import App from './App';
-
+import "./index.css";
+import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
+  // BrowserRouter now aware of this App and make sure it watches our app's url
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
