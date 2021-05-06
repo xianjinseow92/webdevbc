@@ -4,16 +4,24 @@ import Card from "./../ui/Card";
 import classes from "./MeetupItem.module.scss";
 
 function MeetupItem(props) {
+  const {
+    id,
+    image,
+    title,
+    address,
+    description
+  } = props;
+
   return (
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
+          <img src={image} alt={title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
-          <p>{props.description}</p>
+          <h3>{title}</h3>
+          <address>{address}</address>
+          <p>{description}</p>
         </div>
         <div className={classes.actions}>
           <button>To Favorites</button>
@@ -22,5 +30,6 @@ function MeetupItem(props) {
     </li>
   );
 }
+
 
 export default MeetupItem;

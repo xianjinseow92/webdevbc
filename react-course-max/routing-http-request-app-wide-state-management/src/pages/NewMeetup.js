@@ -9,7 +9,6 @@ function NewMeetupPage() {
    */
   const history = useHistory();
 
-
   // Passing data from child to parent
   // 1. Create a callback function in parent component. This func will get data from child component
   function addNewMeetup(meetupData) {
@@ -18,8 +17,6 @@ function NewMeetupPage() {
      * @param {meetupData} meetupData Object containing values retrieved from form in NewMeetupForm Component.
      */
     // Send a POST request to store new data on firebase database
-
-    // POST Request, store data on firebase servers
     fetch(
       "https://meetup-app-88832-default-rtdb.asia-southeast1.firebasedatabase.app/meetup.json",
       {
