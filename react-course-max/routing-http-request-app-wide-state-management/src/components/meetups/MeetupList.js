@@ -10,7 +10,7 @@ function MeetupList(props) {
       {props.meetups.map((meetup) => (
         <MeetupItem
           key={meetup.key}
-          id={meetup.id}
+          id={meetup.key}
           image={meetup.image}
           title={meetup.title}
           address={meetup.address}

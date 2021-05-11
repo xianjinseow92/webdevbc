@@ -1,11 +1,18 @@
 import { createContext, useState } from "react";
 
-const FavoritesContext = createContext({
+const FavoritesContext = createContext(
+  {
   favorites: [],
   totalFavorites: 0,
-});
+  // exposing funcs in this context to other components as well
+  // honestly not necessary to write here but it's good for autocompletion
+  addFavorite: (favoriteMeetup) => {},
+  removeFavorite: (meetupId) => {},
+  itemIsFavorite: (meetupId) => {},
+}
+);
 
-const FavoritesContextProvider = (props) => {
+export const FavoritesContextProvider = (props) => {
   /**
    * This is used as a REACT COMPONENT instead of wrapping components with the FavoritesContext.Provider straight up because we want the apps to also re-render and reflect the latest state when the state of the Favorites data changes
    */
@@ -53,15 +60,19 @@ const FavoritesContextProvider = (props) => {
   const context = {
     favorites: userFavorites,
     totalFavorites: userFavorites.length,
+    // adding functions into this so we can pass these functions down into other components, so other components can make use of them.
+    addFavorite: addFavoritesHandler,
+    removeFavorite: removeFavoritesHandler,
+    itemIsFavorite: itemIsFavoriteHandler,
   };
 
   return (
     <FavoritesContext.Provider value={context}>
-      {" "}
-      {/* This will essentially service as a react wrapper component */}{" "}
-      {props.children}{" "}
+      {/* This will essentially service as a react wrapper component.
+          All children will have access to context value */}
+      {props.children}
     </FavoritesContext.Provider>
   );
 };
 
-export default FavoritesContextProvider;
+export default FavoritesContext;
