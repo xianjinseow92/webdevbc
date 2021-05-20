@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Components
 import ExpensesList from "./ExpensesList";
 import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
+import ExpensesChart from "./ExpensesChart";
 
 import Card from "../UI/Card";
 
@@ -44,6 +45,7 @@ const Expenses = (props) => {
         onChangeFilter={dropdownSelectedHandler}
         yearToShow={filteredYear}
       />
+      <ExpensesChart expenses={filteredExpenses}/>
 
       {/* Render all expenses first (because initial value is set to items). Upon updating state, renders a filtered expenses array */}
       <ExpensesList expenses={filteredExpenses}/>
