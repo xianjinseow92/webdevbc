@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   /**
    * Serves to obtain an Expense from a user and add Expense to overall Expense tracker.
    * Upon submission, input fields also get cleared (via two-way binding)
@@ -12,6 +12,8 @@ const ExpenseForm = () => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+
+  const { onSaveExpenseData } = props; // function that will retrieve expenseData (to be passed to parent)
   //   const [userInput, setUserInput] = useState({
   //     enteredTitle: "",
   //     enteredAmount: 0,
@@ -77,7 +79,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
+
+    onSaveExpenseData(expenseData);
 
     // Clear inputs 
     clearInputs();
