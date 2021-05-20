@@ -15,7 +15,7 @@ const ExpenseItem = (props) => {
    * State, Properties, Variables
    */
   const [title, setTitle] = useState(props.title); // set initial value for variable of which we want to be re-reflected if value changes, and get function that handles changing that value
-  
+  console.log("ExpenseItem re-evaluated by React!");
   /**
    * Functions pertaining to this component
    */
