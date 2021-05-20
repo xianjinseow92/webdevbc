@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./NewExpense.css"; // stylesheet
 
@@ -6,6 +6,7 @@ import "./NewExpense.css"; // stylesheet
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+  const [isEditing, setIsEditing] = useState(false);
   const { onAddExpense } = props; // function to pass to App.js for the purposes of adding a new expense and re-rendering all items on the site
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
@@ -15,12 +16,21 @@ const NewExpense = (props) => {
     };
 
     onAddExpense(expenseData);
+    setIsEditing(false);
   };
 
+  const startEditingHandler = () => {
+    setIsEditing(true);
+  };
+
+  const stopEditingHandler = () => {
+    setIsEditing(false);
+  }
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      {!isEditing && <button onClick={startEditingHandler}>Add New Expense</button>}
+      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} stopEditing={stopEditingHandler} />}
     </div>
   );
 };

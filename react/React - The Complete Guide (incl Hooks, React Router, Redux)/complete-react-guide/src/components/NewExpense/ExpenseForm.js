@@ -6,7 +6,7 @@ const ExpenseForm = (props) => {
   /**
    * Serves to obtain an Expense from a user and add Expense to overall Expense tracker.
    * Upon submission, input fields also get cleared (via two-way binding)
-    * Two-way binding: assigning state variables to input.value and using useState to re-render component
+   * Two-way binding: assigning state variables to input.value and using useState to re-render component
    */
 
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -82,15 +82,15 @@ const ExpenseForm = (props) => {
 
     onSaveExpenseData(expenseData);
 
-    // Clear inputs 
+    // Clear inputs
     clearInputs();
   };
 
   const clearInputs = () => {
-      setEnteredTitle('');
-      setEnteredAmount('');
-      setEnteredDate('');
-  }
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  };
 
   return (
     <form onSubmit={submitHandler}>
@@ -129,6 +129,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.stopEditing}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
