@@ -1,23 +1,38 @@
-import React from 'react';
+import React , { useState }from "react";
 
-import ExpenseItem from './ExpenseItem';
-import Card from '../UI/Card';
-import './Expenses.css';
+// Components
+import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
+import Card from "../UI/Card";
+
+// Styling
+import "./Expenses.css";
 
 const Expenses = (props) => {
+  // From parent
   const { items } = props;
+
+  // Component fields
+  const currentYear = new Date().getFullYear();
+  const [filteredYear, setFilteredYear] = useState(currentYear);
+
+  const dropdownSelectedHandler = (selectedYear) => {
+    console.log(selectedYear);
+    setFilteredYear(selectedYear);
+  }
 
   return (
     <Card className="expenses">
+      <ExpensesFilter onChangeFilter={dropdownSelectedHandler} yearToShow={filteredYear}/>
       {items.map((expense, index) => {
         return (
-          <ExpenseItem 
+          <ExpenseItem
             key={index}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
           />
-        )
+        );
       })}
 
       {/* <ExpenseItem
@@ -42,6 +57,6 @@ const Expenses = (props) => {
       /> */}
     </Card>
   );
-}
+};
 
 export default Expenses;
