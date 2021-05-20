@@ -1,4 +1,4 @@
-import React , { useState }from "react";
+import React, { useState } from "react";
 
 // Components
 import ExpenseItem from "./ExpenseItem";
@@ -15,18 +15,49 @@ const Expenses = (props) => {
   // Component fields
   const currentYear = new Date().getFullYear();
   const [filteredYear, setFilteredYear] = useState(currentYear);
+  const [filteredItems, setFilteredItems] = useState(items);
 
   const dropdownSelectedHandler = (selectedYear) => {
-    console.log(selectedYear);
+    /**
+     * Fires when dropdown changes value
+     */
     setFilteredYear(selectedYear);
-  }
+    filterItemsByYear(selectedYear);
+    // console.log(filteredItems);
+  };
+
+  const filterItemsByYear = (selectedYear) => {
+    /**
+     * 
+     */
+    const filteredExpenses = items.filter((expense) => {
+      return expense.date.getFullYear().toString() === selectedYear;
+    });
+
+    setFilteredItems([...filteredExpenses]);
+  };
 
   return (
     <Card className="expenses">
-      <ExpensesFilter onChangeFilter={dropdownSelectedHandler} yearToShow={filteredYear}/>
+      <ExpensesFilter
+        onChangeFilter={dropdownSelectedHandler}
+        yearToShow={filteredYear}
+      />
 
-      {/* Render all expenses */}
+      {/* Render all expenses
       {items.map((expense) => {
+        return (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        );
+      })} */}
+
+      {/* Filtering logic: if expense year == selectedYear, then render the component */}
+      {filteredItems.map((expense) => {
         return (
           <ExpenseItem
             key={expense.id}
