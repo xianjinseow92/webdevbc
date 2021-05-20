@@ -24,10 +24,12 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpensesFilter onChangeFilter={dropdownSelectedHandler} yearToShow={filteredYear}/>
-      {items.map((expense, index) => {
+
+      {/* Render all expenses */}
+      {items.map((expense) => {
         return (
           <ExpenseItem
-            key={index}
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
