@@ -32,11 +32,11 @@ const App = () => {
   const addExpenseHandler = (expense) => {
     /**
      * Updates allExpenses array state by appending a new expense to the front of the array.
-      * Serves to aid in rendering a newly added expense 
+     * Serves to aid in rendering a newly added expense
      */
     setAllExpenses((prevState) => {
       return [expense, ...prevState];
-    })
+    });
   };
 
   // return React.createElement(
@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}/>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={allExpenses} />
     </div>
   );

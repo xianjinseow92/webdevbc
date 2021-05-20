@@ -6,8 +6,11 @@ const ChartBar = (props) => {
   let barFillHeight = "0%";
 
   if (props.max > 0) {
+      // value here represents the amount spent for that month
+      // maxValue represents the max amount of money spent for the entire year
     barFillHeight = Math.round((props.value / props.maxValue) * 100);
   }
+
   return (
     <div className="chart-bar">
       <div className="chart-bar__inner">

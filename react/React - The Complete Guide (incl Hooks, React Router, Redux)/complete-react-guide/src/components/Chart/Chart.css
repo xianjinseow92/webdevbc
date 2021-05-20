@@ -1,11 +1,9 @@
 .chart {
-    padding: 1rem;
-    border-radius: 12px;
-    background-color: #f8dfff;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    height: 10rem;
-  }
-  Inner: 1440 x 789
-  Outer: 1440 x 900
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f8dfff;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+}
