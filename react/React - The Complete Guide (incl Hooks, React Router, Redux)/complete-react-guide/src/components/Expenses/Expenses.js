@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 // Components
-import ExpenseItem from "./ExpenseItem";
+import ExpensesList from "./ExpensesList";
 import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
+
 import Card from "../UI/Card";
 
 // Styling
@@ -37,23 +38,6 @@ const Expenses = (props) => {
     setFilteredExpensesItems([...filteredExpenses]);
   };
 
-  // Condition for rendering content based on whether filteredExpenses is empty or not.
-  // This works because when state updates the whole component is re-rendered (function is run again), and therefore this statement is re-evaluated
-  let expensesContent = <p>No expenses found.</p>;
-
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map((expense) => {
-      return (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      );
-    });
-  }
-
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -62,7 +46,7 @@ const Expenses = (props) => {
       />
 
       {/* Render all expenses first (because initial value is set to items). Upon updating state, renders a filtered expenses array */}
-      {expensesContent}
+      <ExpensesList expenses={filteredExpenses}/>
 
       {/* <ExpenseItem
         title={props.items[0].title}
