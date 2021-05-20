@@ -15,7 +15,7 @@ const Expenses = (props) => {
   // Component fields
   const currentYear = new Date().getFullYear();
   const [filteredYear, setFilteredYear] = useState(currentYear);
-  const [filteredItems, setFilteredItems] = useState(items);
+  const [filteredExpenses, setFilteredExpensesItems] = useState(items);
 
   const dropdownSelectedHandler = (selectedYear) => {
     /**
@@ -28,14 +28,31 @@ const Expenses = (props) => {
 
   const filterItemsByYear = (selectedYear) => {
     /**
-     * 
+     *
      */
     const filteredExpenses = items.filter((expense) => {
       return expense.date.getFullYear().toString() === selectedYear;
     });
 
-    setFilteredItems([...filteredExpenses]);
+    setFilteredExpensesItems([...filteredExpenses]);
   };
+
+  // Condition for rendering content based on whether filteredExpenses is empty or not.
+  // This works because when state updates the whole component is re-rendered (function is run again), and therefore this statement is re-evaluated
+  let expensesContent = <p>No expenses found.</p>;
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense) => {
+      return (
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+        />
+      );
+    });
+  }
 
   return (
     <Card className="expenses">
@@ -44,29 +61,8 @@ const Expenses = (props) => {
         yearToShow={filteredYear}
       />
 
-      {/* Render all expenses
-      {items.map((expense) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        );
-      })} */}
-
-      {/* Filtering logic: if expense year == selectedYear, then render the component */}
-      {filteredItems.map((expense) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        );
-      })}
+      {/* Render all expenses first (because initial value is set to items). Upon updating state, renders a filtered expenses array */}
+      {expensesContent}
 
       {/* <ExpenseItem
         title={props.items[0].title}
