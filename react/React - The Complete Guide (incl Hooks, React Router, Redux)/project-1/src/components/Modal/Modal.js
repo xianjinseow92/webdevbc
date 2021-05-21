@@ -7,7 +7,7 @@ const Modal = (props) => {
    * Reusable modal to be rendered on screen.
    */
   // Parent props
-  const { errorMsg, closeModal } = props;
+  const { errorMsg, closeModal } = props; 
 
   return (
     <>

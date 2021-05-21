@@ -27,7 +27,7 @@ const Form = (props) => {
     else if (enteredUsername === "") {
       modalErrorMsg = ".. Do you not have a name?";
       openModal(modalErrorMsg);
-    } else if (parseInt(enteredAge) < 0 || enteredAge === "") {
+    } else if (+enteredAge < 0 || enteredAge === "") {
       modalErrorMsg = "Dude, seriously, enter a proper age."
       openModal(modalErrorMsg);
     } else {
@@ -49,7 +49,7 @@ const Form = (props) => {
   };
 
   const getUserAge = (evt) => {
-    setEnteredAge(parseInt(evt.target.value));
+    setEnteredAge(evt.target.value);
     console.log(evt.target.value);
   };
 
