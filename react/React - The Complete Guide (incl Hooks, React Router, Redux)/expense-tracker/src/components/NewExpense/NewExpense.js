@@ -6,6 +6,11 @@ import "./NewExpense.css"; // stylesheet
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+  /**
+   * Component serves as container for form
+    * Also serves to conditionally render an "Add Expense" button or the Add Expense Form
+    * @param {function} onAddExpense Parent function from App.js for the purposes of adding a new expense and re-rendering all expenses on the website
+   */
   const [isEditing, setIsEditing] = useState(false);
   const { onAddExpense } = props; // function to pass to App.js for the purposes of adding a new expense and re-rendering all items on the site
 
