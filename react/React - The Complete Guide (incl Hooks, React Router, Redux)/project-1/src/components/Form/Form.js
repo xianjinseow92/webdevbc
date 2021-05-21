@@ -9,22 +9,38 @@ const Form = (props) => {
    * @param {function} getFormValue Function to pass data back up to parent
    */
   // props from parent
-  const { getFormValue } = props;
+  const { getFormValue, openModal } = props;
 
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
+  let modalErrorMsg = "";
 
   const onSubmitHander = (evt) => {
     /**
      * Retrieves data from input fields
      */
     evt.preventDefault();
+    if (enteredUsername === "" && enteredAge === "") {
+      modalErrorMsg = "You didn't enter a name AND age you dumb shit."
+      openModal(modalErrorMsg);
+    }
+    else if (enteredUsername === "") {
+      modalErrorMsg = ".. Do you not have a name?";
+      openModal(modalErrorMsg);
+    } else if (parseInt(enteredAge) < 0 || enteredAge === "") {
+      modalErrorMsg = "Dude, seriously, enter a proper age."
+      openModal(modalErrorMsg);
+    } else {
+      submitFormValues();
+    }
+  };
 
+  const submitFormValues = () => {
     getFormValue({
       name: enteredUsername,
-      age: enteredAge
+      age: enteredAge,
     });
-  };
+  }
 
   // Data retrieval functions
   const getUserName = (evt) => {
@@ -33,7 +49,7 @@ const Form = (props) => {
   };
 
   const getUserAge = (evt) => {
-    setEnteredAge(evt.target.value);
+    setEnteredAge(parseInt(evt.target.value));
     console.log(evt.target.value);
   };
 

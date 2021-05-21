@@ -5,6 +5,7 @@ import "./App.css";
 // Components
 import UserList from "./components/UserList/UserList";
 import Form from "./components/Form/Form";
+import Modal from "./components/Modal/Modal";
 
 // UI-related components
 import Container from "./components/UI/Container/Container";
@@ -19,30 +20,45 @@ function App() {
    */
 
   const [users, setUsers] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalErrorMsg, setModalerrorMsg] = useState("");
 
-  const submitHandler = (evt) => {
+  const addUser = (evt) => {
     setUsers((prevState) => {
       return [evt, ...prevState];
     });
   };
 
-  return (
-    <Container>
-      <div className="App">
-        {/* Form to add shit */}
-        <Card>
-          <Form getFormValue={submitHandler} />
-        </Card>
+  // Modal 
+  const openModal = (modalErrorMsg) => {
+    setModalerrorMsg(modalErrorMsg);
+    setShowModal(true);
+  }
 
-        {/* Conditional rendering */}
-        {/* User list > user (wrapped in card) */}
-        {users.length !== 0 && (
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
+  return (
+    <>
+      {showModal && <Modal closeModal={closeModal} errorMsg={modalErrorMsg}/>}
+      <Container>
+        <div className="App">
+          {/* Form to add shit */}
           <Card>
-            <UserList users={users} />
+            <Form getFormValue={addUser} openModal={openModal}/>
           </Card>
-        )}
-      </div>
-    </Container>
+
+          {/* Conditional rendering */}
+          {/* User list > user (wrapped in card) */}
+          {users.length !== 0 && (
+            <Card>
+              <UserList users={users} />
+            </Card>
+          )}
+        </div>
+      </Container>
+    </>
   );
 }
 
