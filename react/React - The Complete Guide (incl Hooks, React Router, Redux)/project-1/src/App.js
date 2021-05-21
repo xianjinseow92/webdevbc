@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import "./App.css";
 
 // Components
@@ -10,25 +12,35 @@ import Card from "./components/UI/Card";
 
 function App() {
   /**
-   * App component that holds everything. Also manages data
+   * App component that holds everything.
+   * Manages data.
+   * Retrival of user data from form
+   * Updating of User to User List
    */
 
-  const getFormValue = evt => {
-    console.log(evt);
-  }
+  const [users, setUsers] = useState([]);
+
+  const submitHandler = (evt) => {
+    setUsers((prevState) => {
+      return [evt, ...prevState];
+    });
+  };
 
   return (
     <Container>
       <div className="App">
         {/* Form to add shit */}
         <Card>
-          <Form getFormValue={getFormValue}/>
+          <Form getFormValue={submitHandler} />
         </Card>
+
         {/* Conditional rendering */}
         {/* User list > user (wrapped in card) */}
-        <Card>
-          <UserList />
-        </Card>
+        {users.length !== 0 && (
+          <Card>
+            <UserList users={users} />
+          </Card>
+        )}
       </div>
     </Container>
   );

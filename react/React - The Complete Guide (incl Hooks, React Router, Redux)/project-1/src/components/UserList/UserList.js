@@ -12,24 +12,18 @@ const UserList = (props) => {
    * @param {User[]} users List of user objects
    */
 
-//   const { users } = props;
+  const { users } = props;
+  let id = 0;
 
-const users = [
-    {
-        name: 'xj',
-        age: 6
-    },
-    {
-        name: 'crrystal',
-        age: 69
-    },
-]
+  const generateId = () => {
+    return id++;
+  }
 
   return (
     <ul className={styles['user-list']}>
       {/* List of users to display, if users exists */}
-      {users.length !== 0 && users.map(user => {
-          return <User key={user.name} name={user.name} age={user.age}/>
+      {users.map(user => {
+          return <User key={generateId()} name={user.name} age={user.age}/>
       })}
     </ul>
   );
