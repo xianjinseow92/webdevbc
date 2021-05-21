@@ -1,10 +1,7 @@
-import { conforms } from "lodash";
 import React, { useState } from "react";
 
 // Components
 import FormattedInput from "../Functional/FormattedInput";
-
-import styles from "./Form.module.scss";
 
 const Form = (props) => {
   /**
