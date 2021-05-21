@@ -29,7 +29,7 @@ const users = [
     <ul className={styles['user-list']}>
       {/* List of users to display, if users exists */}
       {users.length !== 0 && users.map(user => {
-          return <User name={user.name} age={user.age}/>
+          return <User key={user.name} name={user.name} age={user.age}/>
       })}
     </ul>
   );

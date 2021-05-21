@@ -1,0 +1,15 @@
+.form-control {
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    input {
+        border-color: lightgrey;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
