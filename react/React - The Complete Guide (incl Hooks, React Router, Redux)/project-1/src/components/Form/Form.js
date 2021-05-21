@@ -7,6 +7,7 @@ const Form = (props) => {
   /**
    * Form component that would submit data to parent
    * @param {function} getFormValue Function to pass data back up to parent
+   * @param {function} openModal Function to open modal. Takes a string parameter to display an error message on modal
    */
   // props from parent
   const { getFormValue, openModal } = props;
@@ -21,14 +22,13 @@ const Form = (props) => {
      */
     evt.preventDefault();
     if (enteredUsername === "" && enteredAge === "") {
-      modalErrorMsg = "You didn't enter a name AND age you dumb shit."
+      modalErrorMsg = "You didn't enter a name AND age you dumb shit.";
       openModal(modalErrorMsg);
-    }
-    else if (enteredUsername === "") {
+    } else if (enteredUsername === "") {
       modalErrorMsg = ".. Do you not have a name?";
       openModal(modalErrorMsg);
     } else if (+enteredAge < 0 || enteredAge === "") {
-      modalErrorMsg = "Dude, seriously, enter a proper age."
+      modalErrorMsg = "Dude, seriously, enter a proper age.";
       openModal(modalErrorMsg);
     } else {
       submitFormValues();
@@ -40,7 +40,7 @@ const Form = (props) => {
       name: enteredUsername,
       age: enteredAge,
     });
-  }
+  };
 
   // Data retrieval functions
   const getUserName = (evt) => {
