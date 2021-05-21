@@ -10,14 +10,14 @@ const FormattedInput = props => {
      * @param {function} getValue Function to pass in to retrieve value from input
      */
 
-    const {label, getValue} = props;
+    const {label, getValue, value} = props;
 
     return (
         <div className={styles["form-control"]}>
             <label htmlFor="textBox">
                 {label}
             </label>
-            <input type="text" onChange={getValue} id="textBox"/>
+            <input type="text" onChange={getValue} id="textBox" value={value}/>
         </div>
     )
 }

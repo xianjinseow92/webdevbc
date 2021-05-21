@@ -1,9 +1,8 @@
 import "./App.css";
 
 // Components
-
 import UserList from "./components/UserList/UserList";
-import FormattedInput from "./components/Functional/FormattedInput";
+import Form from "./components/Form/Form";
 
 // UI-related components
 import Container from "./components/UI/Container/Container";
@@ -14,12 +13,16 @@ function App() {
    * App component that holds everything. Also manages data
    */
 
+  const getFormValue = evt => {
+    console.log(evt);
+  }
+
   return (
     <Container>
       <div className="App">
         {/* Form to add shit */}
         <Card>
-          <div>testiong</div>
+          <Form getFormValue={getFormValue}/>
         </Card>
         {/* Conditional rendering */}
         {/* User list > user (wrapped in card) */}
