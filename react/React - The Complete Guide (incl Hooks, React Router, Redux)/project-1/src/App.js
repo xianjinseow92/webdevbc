@@ -1,7 +1,8 @@
 import "./App.css";
 
 // Components
-import User from "./components/UserList/User/User";
+
+import UserList from "./components/UserList/UserList";
 
 // UI-related components
 import Container from "./components/UI/Container/Container";
@@ -13,7 +14,7 @@ function App() {
       <div className="App">
         {/* Form to add shit (wrapped in a card) */}
         <Card>
-          <User name={"xj"} age={69}/>
+          <UserList/>
         </Card>
         {/* Conditional rendering */}
         {/* User list > user (wrapped in card) */}

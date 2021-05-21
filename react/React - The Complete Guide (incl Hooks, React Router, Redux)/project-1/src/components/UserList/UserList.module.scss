@@ -1,3 +1,11 @@
-ul {
-    background: red;
+.user-list {
+    list-style-type: none;
+
+    li {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
 }
