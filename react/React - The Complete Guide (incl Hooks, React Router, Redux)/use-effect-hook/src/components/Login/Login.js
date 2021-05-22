@@ -43,8 +43,6 @@ const Login = (props) => {
       setFormIsValid(
         enteredEmail.includes("@") && enteredPassword.trim().length > 6
       );
-      if (formIsValid) console.log("Form is valid!");
-
     }, 500);
 
     return () => {
