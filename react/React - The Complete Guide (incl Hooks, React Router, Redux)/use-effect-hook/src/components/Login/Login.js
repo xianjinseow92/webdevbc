@@ -11,14 +11,28 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  console.log("form is run");
+  console.log("COMPONENT HAS RE-RENDERED");
+
+  useEffect(() => {
+    /**
+     * To understand when userEffect is run.
+      * [] dependency: useEffect code will run only once
+      * useEffect cleanup will run every single time BEFORE useEffect code
+      * AND when component dismounts
+     */
+    console.log("EFFECT RUNNING");
+    return () => {
+      console.log("EFFECT CLEANUP");
+    }
+  }, [])
+
   // Handles things as a RESPONSE to something. That's where you can use useEffect
   useEffect(() => {
     /**
      * Form validation for email and password.
      * Only validates 500s after user has stopped typing (to prevent executing setState so many times) (DEBOUNCING)
       * Achieved by using useEffect's Cleanup Function.
-      * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time)
+      * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time), and after the component has dismounted
      */
 
     const timerIdentifier = setTimeout(() => {
