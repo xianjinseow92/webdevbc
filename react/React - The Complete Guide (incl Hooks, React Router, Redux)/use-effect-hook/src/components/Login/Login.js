@@ -1,89 +1,135 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 
+const passwordReducer = (state, action) => {
+  switch (action.type) {
+    case "INPUT_PASSWORD":
+      return { value: action.value, isValid: action.value.trim().length > 6 };
+    case "INPUT_PASSWORD_BLUR":
+      return { value: state.value, isValid: state.value.trim().length > 6 };
+    default:
+      return { value: "", isValid: false };
+  }
+}; // defined outside of component because it does not require any data to be passed into it.
+
+const emailReducer = (state, action) => {
+  switch (action.type) {
+    case "INPUT_EMAIL":
+      return {
+        value: action.value,
+        isValid: action.value.trim().includes("@"),
+      };
+    case "INPUT_EMAIL_BLUR":
+      return {
+        value: state.value,
+        isValid: state.value.trim().includes("@"),
+      };
+    default:
+      return { value: "", isValid: false };
+  }
+};
 const Login = (props) => {
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState();
-  const [enteredPassword, setEnteredPassword] = useState("");
-  const [passwordIsValid, setPasswordIsValid] = useState();
+  // const [enteredEmail, setEnteredEmail] = useState("");
+  // const [emailIsValid, setEmailIsValid] = useState();
+  // const [enteredPassword, setEnteredPassword] = useState("");
+  // const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+    value: "",
+    isValid: false,
+  }); // combining password states together
+  const [emailState, dispatchEmail] = useReducer(emailReducer, {
+    value: "",
+    isValid: false,
+  });
 
   console.log("COMPONENT HAS RE-RENDERED");
 
-  useEffect(() => {
-    /**
-     * To understand when userEffect is run.
-      * [] dependency: useEffect code will run only once
-      * useEffect cleanup will run every single time BEFORE useEffect code
-      * AND when component dismounts
-     */
-    console.log("EFFECT RUNNING");
-    return () => {
-      console.log("EFFECT CLEANUP");
-    }
-  }, [])
+  // useEffect(() => {
+  //   /**
+  //    * To understand when userEffect is run.
+  //    * [] dependency: useEffect code will run only once
+  //    * useEffect cleanup will run every single time BEFORE useEffect code
+  //    * AND when component dismounts
+  //    */
+  //   console.log("EFFECT RUNNING");
+  //   return () => {
+  //     console.log("EFFECT CLEANUP");
+  //   };
+  // }, []);
 
   // Handles things as a RESPONSE to something. That's where you can use useEffect
-  useEffect(() => {
-    /**
-     * Form validation for email and password.
-     * Only validates 500s after user has stopped typing (to prevent executing setState so many times) (DEBOUNCING)
-      * Achieved by using useEffect's Cleanup Function.
-      * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time), and after the component has dismounted
-     */
+  // useEffect(() => {
+  //   /**
+  //    * Form validation for email and password.
+  //    * Only validates 500s after user has stopped typing (to prevent executing setState so many times) (DEBOUNCING)
+  //    * Achieved by using useEffect's Cleanup Function.
+  //    * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time), and after the component has dismounted
+  //    */
 
-    const timerIdentifier = setTimeout(() => {
-      /**
-       * To only apply setState after user has stopped typing for 500 to prevent setState from being run so many times
-       */
-      console.log("Checking for form validity...");
-      setFormIsValid(
-        enteredEmail.includes("@") && enteredPassword.trim().length > 6
-      );
-    }, 500);
+  //   const timerIdentifier = setTimeout(() => {
+  //     /**
+  //      * To only apply setState after user has stopped typing for 500 to prevent setState from being run so many times
+  //      */
+  //     console.log("Checking for form validity...");
+  //     setFormIsValid(
+  //       enteredEmail.includes("@") && passwordState.value.trim().length > 6
+  //     );
+  //   }, 500);
 
-    return () => {
-      /**
-       * useEffect cleanup function. Always run before useEffect code is executed (except for the first time)
-        * Clears all timers so that essentially only one timer is run 
-       */
-      console.log("CLEANUP");
-      clearTimeout(timerIdentifier);
-    };
-  }, [enteredEmail, enteredPassword]);
+  //   return () => {
+  //     /**
+  //      * useEffect cleanup function. Always run before useEffect code is executed (except for the first time)
+  //      * Clears all timers so that essentially only one timer is run
+  //      */
+  //     console.log("CLEANUP");
+  //     clearTimeout(timerIdentifier);
+  //   };
+  // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     console.log("email changed");
-    setEnteredEmail(event.target.value);
+    // setEnteredEmail(event.target.value);
+    dispatchEmail({
+      type: "INPUT_EMAIL",
+      value: event.target.value
+    });
 
-    // setFormIsValid(
-    //   event.target.value.includes('@') && enteredPassword.trim().length > 6
-    // );
+    setFormIsValid(emailState.isValid && passwordState.isValid);
   };
 
   const passwordChangeHandler = (event) => {
     console.log("passwod changed");
-    setEnteredPassword(event.target.value);
+    // setEnteredPassword(event.target.value);
+    dispatchPassword({
+      type: "INPUT_PASSWORD",
+      value: event.target.value,
+    });
 
-    // setFormIsValid(
-    //   event.target.value.trim().length > 6 && enteredEmail.includes('@')
-    // );
+    setFormIsValid(passwordState.isValid && emailState.isValid);
   };
 
-  // const validateEmailHandler = () => {
-  //   setEmailIsValid(enteredEmail.includes("@"));
-  // };
+  const validateEmailHandler = () => {
+    // setEmailIsValid(enteredEmail.includes("@"));
+    dispatchEmail({
+      type: "INPUT_EMAIL_BLUR"
+    })
+  };
 
-  // const validatePasswordHandler = () => {
-  //   setPasswordIsValid(enteredPassword.trim().length > 6);
-  // };
+  const validatePasswordHandler = () => {
+    // setPasswordIsValid(enteredPassword.trim().length > 6);
+    dispatchPassword({
+      type: "INPUT_PASSWORD_BLUR",
+    });
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredEmail, enteredPassword);
+    props.onLogin(emailState.value, passwordState.value);
   };
 
   return (
@@ -91,30 +137,30 @@ const Login = (props) => {
       <form onSubmit={submitHandler}>
         <div
           className={`${classes.control} ${
-            emailIsValid === false ? classes.invalid : ""
+            emailState.isValid === false ? classes.invalid : ""
           }`}
         >
           <label htmlFor="email">E-Mail</label>
           <input
             type="email"
             id="email"
-            value={enteredEmail}
+            value={emailState.value}
             onChange={emailChangeHandler}
-            // onBlur={validateEmailHandler}
+            onBlur={validateEmailHandler}
           />
         </div>
         <div
           className={`${classes.control} ${
-            passwordIsValid === false ? classes.invalid : ""
+            passwordState.isValid === false ? classes.invalid : ""
           }`}
         >
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
-            value={enteredPassword}
+            value={passwordState.value}
             onChange={passwordChangeHandler}
-            // onBlur={validatePasswordHandler}
+            onBlur={validatePasswordHandler}
           />
         </div>
         <div className={classes.actions}>
