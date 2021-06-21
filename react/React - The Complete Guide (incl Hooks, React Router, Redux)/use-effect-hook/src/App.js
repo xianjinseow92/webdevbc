@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { sha256 as sha256Cryp } from "js-sha256";
+import SHA256 from "crypto-js/sha256";
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
@@ -25,6 +27,20 @@ function App() {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
   };
+
+  const hashedNum = SHA256("987912312").toString();
+  const hashedNum2 = sha256Cryp("987912312");
+  const hashedEmail = SHA256("xianjinseow92@gmail.com").toString();
+  const hashedEmail2 = sha256Cryp("xianjinseow92@gmail.com");
+
+  console.log("cryptojs: ", hashedNum);
+  console.log(hashedNum2);
+  console.log("cryptojs: ", hashedEmail);
+  console.log(hashedEmail2);
+
+
+
+  
 
   return (
     <React.Fragment>

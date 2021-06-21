@@ -47,6 +47,10 @@ const Login = (props) => {
     isValid: false,
   });
 
+  // Used to optimize how many times useEffect is executed. 
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
+
   console.log("COMPONENT HAS RE-RENDERED");
 
   // useEffect(() => {
@@ -63,43 +67,43 @@ const Login = (props) => {
   // }, []);
 
   // Handles things as a RESPONSE to something. That's where you can use useEffect
-  // useEffect(() => {
-  //   /**
-  //    * Form validation for email and password.
-  //    * Only validates 500s after user has stopped typing (to prevent executing setState so many times) (DEBOUNCING)
-  //    * Achieved by using useEffect's Cleanup Function.
-  //    * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time), and after the component has dismounted
-  //    */
+  useEffect(() => {
+    /**
+     * Form validation for email and password.
+     * Only validates 500s after user has stopped typing (to prevent executing setState so many times) (DEBOUNCING)
+     * Achieved by using useEffect's Cleanup Function.
+     * @param {function} CleanupFunction Basically a return statement in useEffect's callback func. This function will run BEFORE useEffect runs (except for the first time), and after the component has dismounted
+     */
 
-  //   const timerIdentifier = setTimeout(() => {
-  //     /**
-  //      * To only apply setState after user has stopped typing for 500 to prevent setState from being run so many times
-  //      */
-  //     console.log("Checking for form validity...");
-  //     setFormIsValid(
-  //       enteredEmail.includes("@") && passwordState.value.trim().length > 6
-  //     );
-  //   }, 500);
+    const timerIdentifier = setTimeout(() => {
+      /**
+       * To only apply setState after user has stopped typing for 500 to prevent setState from being run so many times
+       */
+      console.log("Checking for form validity...");
+      setFormIsValid(
+        emailIsValid && passwordIsValid
+      );
+    }, 500);
 
-  //   return () => {
-  //     /**
-  //      * useEffect cleanup function. Always run before useEffect code is executed (except for the first time)
-  //      * Clears all timers so that essentially only one timer is run
-  //      */
-  //     console.log("CLEANUP");
-  //     clearTimeout(timerIdentifier);
-  //   };
-  // }, [enteredEmail, enteredPassword]);
+    return () => {
+      /**
+       * useEffect cleanup function. Always run before useEffect code is executed (except for the first time)
+       * Clears all timers so that essentially only one timer is run
+       */
+      console.log("CLEANUP");
+      clearTimeout(timerIdentifier);
+    };
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
     console.log("email changed");
     // setEnteredEmail(event.target.value);
     dispatchEmail({
       type: "INPUT_EMAIL",
-      value: event.target.value
+      value: event.target.value,
     });
 
-    setFormIsValid(emailState.isValid && passwordState.isValid);
+    // setFormIsValid(emailState.isValid && passwordState.isValid); // replaced with useEffect
   };
 
   const passwordChangeHandler = (event) => {
@@ -110,14 +114,14 @@ const Login = (props) => {
       value: event.target.value,
     });
 
-    setFormIsValid(passwordState.isValid && emailState.isValid);
+    // setFormIsValid(passwordState.isValid && emailState.isValid); // replaced with useEffect 
   };
 
   const validateEmailHandler = () => {
     // setEmailIsValid(enteredEmail.includes("@"));
     dispatchEmail({
-      type: "INPUT_EMAIL_BLUR"
-    })
+      type: "INPUT_EMAIL_BLUR",
+    });
   };
 
   const validatePasswordHandler = () => {
