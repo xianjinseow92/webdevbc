@@ -1,23 +1,35 @@
-import classes from "./Modal.module.css";
+import React from "react";
 import ReactDOM from "react-dom";
+
+import classes from "./Modal.module.css";
 
 const overlayroot = document.getElementById("overlays");
 
-const Backdrop = props => {
-    return <div className={classes.backdrop}></div>
+const Backdrop = (props) => {
+  const { hideCart } = props; 
+  return <div className={classes.backdrop} onClick={hideCart}></div>;
 };
 
-const ModalOverlay = props => {
-    return <div className={classes.modal}>
+const ModalOverlay = (props) => {
+  return (
+      <div className={classes.modal}>
         <div className={classes.content}>{props.children}</div>
-    </div>
+      </div>
+  );
 };
 
 const Modal = (props) => {
-  return <>
-    {ReactDOM.createPortal(<Backdrop/>, overlayroot)}
-    {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, overlayroot)}
-  </>;
+  const { hideCart } = props; // hide cart function, passed down from App > Cart 
+
+  return (
+    <>
+      {ReactDOM.createPortal(<Backdrop hideCart={hideCart}/>, overlayroot)}
+      {ReactDOM.createPortal(
+        <ModalOverlay>{props.children}</ModalOverlay>,
+        overlayroot
+      )}
+    </>
+  );
 };
 
 export default Modal;

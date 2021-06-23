@@ -5,11 +5,12 @@ import mealsImage from "assets/images/meals.jpeg";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
+  const { showCart } = props; // showCart function. passed down from App
   return (
     <>
       <header className={classes.header}>
           <h1>Meals!</h1>
-          <HeaderCartButton/>
+          <HeaderCartButton onClick={showCart}/>
       </header>
       <div className={classes['main-image']}>
           <img src={mealsImage} alt="A table full of delicious food" />
