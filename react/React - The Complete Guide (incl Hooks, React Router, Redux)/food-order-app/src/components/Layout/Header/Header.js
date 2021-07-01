@@ -5,7 +5,9 @@ import mealsImage from "assets/images/meals.jpeg";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  const { showCart } = props; // showCart function. passed down from App
+  const { showCart, // showCart function. passed down from App
+   } = props; 
+
   return (
     <>
       <header className={classes.header}>

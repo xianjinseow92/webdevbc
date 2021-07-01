@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// Data-related
+import CartProvider from "store/CartProvider"; // all data related to number of items in cart, totalAmount, adding and removing items
+
 // Components
 import Header from "components/Layout/Header/Header";
 import Meals from "components/Meals/Meals";
@@ -22,13 +25,13 @@ function App() {
   }
 
   return (
-    <>
+    <CartProvider>
       {cartIsShown && <Cart hideCart={hideCartHandler} />}
       <Header showCart={showCartHandler}/>
       <main>
         <Meals />
       </main>
-    </>
+    </CartProvider>
   );
 }
 
