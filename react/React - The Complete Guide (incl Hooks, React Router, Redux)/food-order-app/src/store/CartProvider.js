@@ -24,15 +24,15 @@ const cartReducer = (state, action) => {
     let updatedItems;
 
     if (existingCartItem) {
-        // to collapse all same items into a single item
-        const updatedItem = {
-            ...existingCartItem, // copy everything from the existing item
-            amount: existingCartItem.amount + action.item.amount // replace amount property
-        };
-        updatedItems = [...state.items]; // create a new array without editing the old array in memory
-        updatedItems[existingCartItemIndex] = updatedItem; // replace position of existing item with the updatedItem (collapsed and amount combined)
+      // to collapse all same items into a single item
+      const updatedItem = {
+        ...existingCartItem, // copy everything from the existing item
+        amount: existingCartItem.amount + action.item.amount, // replace amount property
+      };
+      updatedItems = [...state.items]; // create a new array without editing the old array in memory
+      updatedItems[existingCartItemIndex] = updatedItem; // replace position of existing item with the updatedItem (collapsed and amount combined)
     } else {
-        updatedItems = state.items.concat(action.item);
+      updatedItems = state.items.concat(action.item);
     }
 
     return {
@@ -40,7 +40,33 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     }; // return new state snapshot
   }
-  return; // return new state snapshot
+
+  if (action.type === "REMOVE") {
+    // minus one or remove item entirely
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.item
+    );
+    const existingItem = state.items[existingCartItemIndex];
+    const updatedTotalAmount = state.totalAmount - existingItem.price;
+
+    let updatedItems;
+    if (existingItem.amount === 1) {
+      // want to remove entire item for array if it's the last item
+      updatedItems = state.items.filter((item) => item.id !== action.item); // this removes the item from the state.items array entirely (NOT AMOUNT)
+    } else {
+      // if item is greater than 1, we don't want to remove item from array
+      // just want to reduce the amount
+      const updatedItem = { ...existingItem, amount: existingItem.amount - 1 }; // decrease amount of existing item by 1
+      updatedItems = [...state.items]; // copy whole state array to prevent any reference bugs
+      updatedItems[existingCartItemIndex] = updatedItem;
+    }
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
+    };
+  }
+  return defaultCartState; // return new state snapshot
 };
 
 const CartProvider = (props) => {
