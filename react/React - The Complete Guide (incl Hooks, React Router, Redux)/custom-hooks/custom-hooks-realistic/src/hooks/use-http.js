@@ -23,6 +23,7 @@ const useHttp = () => {
 
       const data = await response.json();
       transformDataFunc(data); // allows parent component to pass in a custom function to manipulate the data however they want
+      
     } catch (err) {
       setError(err.message || "Something went wrong!");
     }
