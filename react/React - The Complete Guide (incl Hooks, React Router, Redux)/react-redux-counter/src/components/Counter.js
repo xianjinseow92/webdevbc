@@ -15,6 +15,7 @@ const Counter = () => {
 
   const dispatch = useDispatch(); // set up actions to be dispatched from this component to store
   const counter = useSelector((state) => state.counter); // react-redux hook.
+  const show = useSelector((state) => state.showCounter);
   // takes in a function as an argument, which takes state as it's parameter.
   // you may then execute code to retrieve whatever properties you need from the global store's state.
 
@@ -25,7 +26,9 @@ const Counter = () => {
 
   const customAmount = 10;
 
-  const toggleCounterHandler = () => {};
+  const toggleCounterHandler = () => {
+    dispatch({ type: "TOGGLE_COUNTER" });
+  };
   const incrementHandler = () => {
     dispatch({ type: "INCREMENT" });
   };
@@ -39,7 +42,7 @@ const Counter = () => {
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>+</button>
         <button onClick={increaseHandler}>Increase by {customAmount}</button>
