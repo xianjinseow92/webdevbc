@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from "react-redux"; // for accessing the rea
 import { useEffect } from "react";
 
 import store from "store/index";
-import { counterActions } from "store/reducers";
+import { counterActions } from "store/reducers/counter";
 
 import classes from "./Counter.module.css";
 
