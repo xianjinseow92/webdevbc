@@ -11,6 +11,7 @@ const Counter = () => {
     }); // placed in use effect so we don't keep adding a new subscription whenever this component re-renders.
     // function used to just check latest state of store when an action is dispatched to store
   }, []);
+  console.log("Counter component updated");
 
   const dispatch = useDispatch(); // set up actions to be dispatched from this component to store
   const counter = useSelector((state) => state.counter); // react-redux hook.
@@ -22,11 +23,14 @@ const Counter = () => {
   // this component will update as well.
   // does not update when the WHOLE STORE updates. Only updates when the values you subscribed to updates
 
-  console.log("Counter component updated");
+  const customAmount = 10;
 
   const toggleCounterHandler = () => {};
   const incrementHandler = () => {
     dispatch({ type: "INCREMENT" });
+  };
+  const increaseHandler = () => {
+    dispatch({ type: "CUSTOM_INCREASE", value: customAmount });
   };
   const decrementHandler = () => {
     dispatch({ type: "DECREMENT" });
@@ -35,9 +39,10 @@ const Counter = () => {
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
+      <div className={classes.value}>{counter}</div>
       <div>
         <button onClick={incrementHandler}>+</button>
-        <div className={classes.value}>{counter}</div>
+        <button onClick={increaseHandler}>Increase by {customAmount}</button>
         <button onClick={decrementHandler}>-</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
