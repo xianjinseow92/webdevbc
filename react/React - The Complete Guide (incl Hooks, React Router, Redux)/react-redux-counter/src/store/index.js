@@ -3,13 +3,12 @@
 // const store = createStore(counterSlice.reducer); // old redux method
 
 // Redux Toolkit method
-import { counterSlice } from "./reducers/index";
+import { counterSlice, authSlice } from "./reducers";
 import { configureStore } from "@reduxjs/toolkit";
 
 // Create Global Store
 const store = configureStore({
-    reducer: counterSlice.reducer
-})
-
+  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
+});
 
 export default store;

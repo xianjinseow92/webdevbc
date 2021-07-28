@@ -7,16 +7,26 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-// Initial State(s)
-const initialState = {
+/**
+ * *** INITIAL STATES ****
+ */
+// Counter initialState
+const initialCounterState = {
   counter: 0,
   showCounter: true,
   text: "Halo",
 };
+// Authentication initialState
+const initialAuthState = {
+  isAuthenticated: false,
+};
 
+/**
+ * *** REDUCERS ****
+ */
 export const counterSlice = createSlice({
   name: "counter",
-  initialState,
+  initialState: initialCounterState,
   reducers: {
     increment(state) {
       state.counter++;
@@ -33,11 +43,26 @@ export const counterSlice = createSlice({
   },
 });
 
-export const counterActions = counterSlice.actions; // createSlice creates actions for us based on the reducers passed in.
+export const authSlice = createSlice({
+  name: "auth",
+  initialState: initialAuthState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
+  },
+});
 
+/**
+ * *** ACTIONS FROM REDUCERS ****
+ */
+export const counterActions = counterSlice.actions; // createSlice creates actions for us based on the reducers passed in.
 /** Example */
 // const incrementAction =  counterSlice.actions.increment(); // { type: "some-unique-identifier-known-to-redux-toolkit"}
-
+export const authActions = authSlice.actions;
 
 // /**
 //  * File that contains all reducers (functions that mutate store)

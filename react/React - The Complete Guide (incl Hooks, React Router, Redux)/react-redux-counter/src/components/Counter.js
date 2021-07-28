@@ -26,8 +26,8 @@ const Counter = () => {
   console.log("Counter component updated");
 
   const dispatch = useDispatch(); // set up actions to be dispatched from this component to store
-  const counter = useSelector((state) => state.counter); // react-redux hook.
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter); // react-redux hook.
+  const show = useSelector((state) => state.counter.showCounter);
   // takes in a function as an argument, which takes state as it's parameter.
   // you may then execute code to retrieve whatever properties you need from the global store's state.
 
