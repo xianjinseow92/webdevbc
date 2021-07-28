@@ -1,11 +1,11 @@
-import {
-  INCREMENT,
-  DECREMENT,
-  CUSTOM_INCREASE,
-  TOGGLE_COUNTER,
-} from "constants/constants";
+// import {
+//   INCREMENT,
+//   DECREMENT,
+//   CUSTOM_INCREASE,
+//   TOGGLE_COUNTER,
+// } from "constants/constants";
 
-import { createSlice } from "@reduxjs.toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Initial State(s)
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
   text: "Halo",
 };
 
-const counterSlice = createSlice({
+export const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
@@ -25,13 +25,19 @@ const counterSlice = createSlice({
       state.counter--;
     },
     customIncrease(state, action) {
-      state.counter = state.counter + action.value;
+      state.counter = state.counter + action.payload;
     },
     toggleCounter(state) {
       state.showCounter = !state.showCounter;
     },
   },
 });
+
+export const counterActions = counterSlice.actions; // createSlice creates actions for us based on the reducers passed in.
+
+/** Example */
+// const incrementAction =  counterSlice.actions.increment(); // { type: "some-unique-identifier-known-to-redux-toolkit"}
+
 
 // /**
 //  * File that contains all reducers (functions that mutate store)

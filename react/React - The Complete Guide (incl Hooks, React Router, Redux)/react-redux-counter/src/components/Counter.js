@@ -1,12 +1,18 @@
+/**
+ * Old redux method
+ */
+// import {
+//   INCREMENT,
+//   DECREMENT,
+//   CUSTOM_INCREASE,
+//   TOGGLE_COUNTER,
+// } from "constants/constants";
+
 import { useSelector, useDispatch } from "react-redux"; // for accessing the react-redux store
 import { useEffect } from "react";
-import {
-  INCREMENT,
-  DECREMENT,
-  CUSTOM_INCREASE,
-  TOGGLE_COUNTER,
-} from "constants/constants";
+
 import store from "store/index";
+import { counterActions } from "store/reducers";
 
 import classes from "./Counter.module.css";
 
@@ -33,16 +39,20 @@ const Counter = () => {
   const customAmount = 10;
 
   const toggleCounterHandler = () => {
-    dispatch({ type: TOGGLE_COUNTER });
+    // dispatch({ type: TOGGLE_COUNTER }); // old redux method
+    dispatch(counterActions.toggleCounter());
   };
   const incrementHandler = () => {
-    dispatch({ type: INCREMENT });
+    // dispatch({ type: INCREMENT }); // old redux method
+    dispatch(counterActions.increment()); 
   };
   const increaseHandler = () => {
-    dispatch({ type: CUSTOM_INCREASE, value: customAmount });
+    // dispatch({ type: CUSTOM_INCREASE, value: customAmount }); // old redux method
+    dispatch(counterActions.customIncrease(10)); // pass in an action object for us. { type: "SOME_UNIQUE_IDENTIFIER", payload: <value_passed_in> }
   };
   const decrementHandler = () => {
-    dispatch({ type: DECREMENT });
+    // dispatch({ type: DECREMENT }); // old redux method
+    dispatch(counterActions.decrement()); // pass in action object for us
   };
 
   return (
