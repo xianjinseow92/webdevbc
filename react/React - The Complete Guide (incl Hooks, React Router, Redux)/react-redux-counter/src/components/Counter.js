@@ -1,5 +1,11 @@
 import { useSelector, useDispatch } from "react-redux"; // for accessing the react-redux store
 import { useEffect } from "react";
+import {
+  INCREMENT,
+  DECREMENT,
+  CUSTOM_INCREASE,
+  TOGGLE_COUNTER,
+} from "constants/constants";
 import store from "store/index";
 
 import classes from "./Counter.module.css";
@@ -27,16 +33,16 @@ const Counter = () => {
   const customAmount = 10;
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "TOGGLE_COUNTER" });
+    dispatch({ type: TOGGLE_COUNTER });
   };
   const incrementHandler = () => {
-    dispatch({ type: "INCREMENT" });
+    dispatch({ type: INCREMENT });
   };
   const increaseHandler = () => {
-    dispatch({ type: "CUSTOM_INCREASE", value: customAmount });
+    dispatch({ type: CUSTOM_INCREASE, value: customAmount });
   };
   const decrementHandler = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch({ type: DECREMENT });
   };
 
   return (
