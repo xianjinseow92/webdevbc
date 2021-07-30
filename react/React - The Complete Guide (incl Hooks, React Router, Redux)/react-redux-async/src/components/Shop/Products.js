@@ -6,11 +6,13 @@ const Products = (props) => {
     {
       title: "Test",
       price: 6,
+      total: 1,
       description: "Dis be awesome",
     },
     {
       title: "prod",
       price: 2,
+      total: 1,
       description: "Dis be prod",
     },
   ];
@@ -21,13 +23,11 @@ const Products = (props) => {
       <ul>
         {products.map((product) => {
           return (
-            <li>
-              <ProductItem
-                title={product.title}
-                price={product.price}
-                description={product.description}
-              />
-            </li>
+            <ProductItem
+              title={product.title}
+              price={product.price}
+              description={product.description}
+            />
           );
         })}
         {/* <ProductItem
