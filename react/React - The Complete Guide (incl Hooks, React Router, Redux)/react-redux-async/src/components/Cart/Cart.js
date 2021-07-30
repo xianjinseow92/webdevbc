@@ -15,20 +15,24 @@ const Cart = (props) => {
   //   description: String
   // }
 
+  const cartContainsItems = cartItems.length !== 0;
+  const allCartItems = cartItems.map((cartItem) => {
+    return (
+      <CartItem
+        key={cartItem.title}
+        item={{
+          ...cartItem,
+        }}
+      />
+    );
+  });
+  const cartIsEmpty = <h1>Add products below to fill up your cart!!</h1>;
+
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
-        {cartItems.map((cartItem) => {
-          return (
-            <CartItem
-              key={cartItem.title}
-              item={{
-                ...cartItem,
-              }}
-            />
-          );
-        })}
+        {cartContainsItems ? allCartItems : cartIsEmpty}
         {/* <CartItem
           item={{ title: 'Test Item', quantity: 3, total: 18, price: 6 }}
         /> */}
