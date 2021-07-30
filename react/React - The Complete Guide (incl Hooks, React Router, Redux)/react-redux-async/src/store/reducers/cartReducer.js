@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Schematic for cartItem object
-const cartItem = {
-  title: "",
-  quantity: 0,
-  price: 0,
-  total: 0,
-  description: ""
-};
+// const cartItem = {
+//   title: "",
+//   quantity: 0,
+//   price: 0,
+//   total: 0,
+//   description: "",
+// };
 
 // Initial State
 const initialCartState = {
