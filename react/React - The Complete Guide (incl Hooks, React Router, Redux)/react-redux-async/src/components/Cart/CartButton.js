@@ -1,10 +1,10 @@
-import classes from './CartButton.module.css';
+import classes from "./CartButton.module.css";
 
-import { useSelector  } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const CartButton = (props) => {
   const { onToggleCart } = props;
-  const numItemsInCart = useSelector(state => state.cart.cartItems.length);
+  const numItemsInCart = useSelector((state) => state.cart.cartItems.length);
   return (
     <button onClick={onToggleCart} className={classes.button}>
       <span>My Cart</span>
