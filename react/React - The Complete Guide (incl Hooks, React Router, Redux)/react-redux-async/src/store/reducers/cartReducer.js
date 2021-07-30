@@ -60,13 +60,41 @@ const cartSlice = createSlice({
     removeItemFromCart(state, action) {
       /**
        * Method to remove item from cart
-       * If item exists, deduct 1 from quantity
+       * If item exists, and quantity > 1 deduct 1 from quantity
        * If item quanity only has 1 left, remove item from array entirely.
+       * @param {object} state Latest state snapshot of cart reducer in store
+       * @param {object} action {type: UNIQUE_TYPE_IDENTIFIER, action: <data passed into action creator>}
        */
+      const cartItemToRemove = action.payload;
+
+      const itemFromCartIndex = state.cartItems.findIndex(
+        (cartItemInCart) => cartItemInCart.title === cartItemToRemove.title
+      );
+      if (itemFromCartIndex !== -1) {
+        const itemFromCart = state.cartItems[itemFromCartIndex];
+        // if item exists and quantity greater than 1, deduct 1 from quantity
+        if (itemFromCart.quantity > 1) {
+          const modifiedCartItemFromCart = modifyCartItem(
+            itemFromCart,
+            "REMOVE"
+          );
+          state.cartItems.splice(
+            itemFromCartIndex,
+            1,
+            modifiedCartItemFromCart
+          );
+        } else {
+          // completely remove item from cart if quantity below 1
+          state.cartItems.splice(itemFromCartIndex, 1);
+        }
+      }
+
+      console.log("Cart item removed!");
     },
     showCart(state) {
       // Deals with show/hide of cart
       state.showCart = !state.showCart;
+      console.log("Cart is hidden: ", !state.showCart);
     },
   },
 });
