@@ -8,7 +8,7 @@ const uiSlice = createSlice({
   name: "uiActions",
   initialState: initialUIState,
   reducers: {
-    showCart(state) {
+    toggleCart(state) {
       state.showCart = !state.showCart;
     },
   },
