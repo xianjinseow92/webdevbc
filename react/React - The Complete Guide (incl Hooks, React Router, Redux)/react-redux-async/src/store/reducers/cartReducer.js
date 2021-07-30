@@ -39,7 +39,7 @@ const cartSlice = createSlice({
        * @param {object} state {cartItems: [], showCart: boolean}
        * @param {object} action {type: "UNIQUE_IDENTIFIER", payload: cartItem = {title, quantity, price, total}}
        */
-      const addedItem = {...action.payload, total: action.payload.quantity * action.payload.price};
+      const addedItem = action.payload;
 
       // Check if item in cart
       const itemFromCartIndex = state.cartItems.findIndex(
@@ -49,9 +49,8 @@ const cartSlice = createSlice({
       if (itemFromCartIndex !== -1) {
         // if item already in cart, increase cartItem quantity by 1
         const itemFromCart = state.cartItems[itemFromCartIndex]; // retrieve item from cart
-        itemFromCart.quantity += 1;
-        itemFromCart.total = itemFromCart.price * itemFromCart.quantity;
-        state.cartItems.splice(itemFromCartIndex, 1, itemFromCart);
+        const modifiedItemFromCart = modifyCartItem(itemFromCart, "ADD");
+        state.cartItems.splice(itemFromCartIndex, 1, modifiedItemFromCart);
       } else {
         // if item not in cart, add as new element in cartItems.
         state.cartItems.push(addedItem); // .push works because we are using reduxToolkit
