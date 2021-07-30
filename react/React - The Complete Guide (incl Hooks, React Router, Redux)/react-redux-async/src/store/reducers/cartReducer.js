@@ -24,8 +24,7 @@ const initialCartState = {
       quantity: 2,
       total: 4,
     },
-  ], // array of items in cart
-  showCart: true,
+  ] // array of items in cart
 };
 
 const cartSlice = createSlice({
@@ -36,7 +35,7 @@ const cartSlice = createSlice({
       /**
        * Reducer to add items to cartItems
        * If item already in cart, increase quanity of existing item
-       * @param {object} state {cartItems: [], showCart: boolean}
+       * @param {object} state {cartItems: []}
        * @param {object} action {type: "UNIQUE_IDENTIFIER", payload: cartItem = {title, quantity, price, total}}
        */
       const addedItem = action.payload;
@@ -90,13 +89,8 @@ const cartSlice = createSlice({
       }
 
       console.log("Cart item removed!");
-    },
-    showCart(state) {
-      // Deals with show/hide of cart
-      state.showCart = !state.showCart;
-      console.log("Cart is hidden: ", !state.showCart);
-    },
-  },
+    }
+  }
 });
 
 const modifyCartItem = (cartItem, operation) => {

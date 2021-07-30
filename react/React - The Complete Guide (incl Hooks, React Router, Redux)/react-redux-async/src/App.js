@@ -8,18 +8,17 @@ import { useEffect } from "react";
 import store from "store/index";
 
 function App() {
-
   // For logging purposes
   useEffect(() => {
-    store.subscribe(_ => {
+    store.subscribe((_) => {
       console.log(store.getState());
-    })
+    });
     return () => {
       console.log("CLEANUP");
-    }
+    };
   }, []);
 
-  const showCart = useSelector((state) => state.cart.showCart);
+  const showCart = useSelector((state) => state.cartUI.showCart);
 
   return (
     <Layout>
