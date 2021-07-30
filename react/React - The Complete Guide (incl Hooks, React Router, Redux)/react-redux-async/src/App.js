@@ -18,7 +18,7 @@ function App() {
     };
   }, []);
 
-  const showCart = useSelector((state) => state.cartUI.showCart);
+  const showCart = useSelector((state) => state.uiActions.showCart);
 
   return (
     <Layout>
