@@ -6,6 +6,7 @@ const cartItem = {
   quantity: 0,
   price: 0,
   total: 0,
+  description: ""
 };
 
 // Initial State
