@@ -72,6 +72,25 @@ const cartSlice = createSlice({
   },
 });
 
+const modifyCartItem = (cartItem, operation) => {
+  switch (operation) {
+    case "ADD":
+      cartItem.quantity += 1;
+      return {
+        ...cartItem,
+        total: cartItem.quantity * cartItem.price,
+      };
+    case "REMOVE":
+      cartItem.quantity -= 1;
+      return {
+        ...cartItem,
+        total: cartItem.quantity * cartItem.price,
+      };
+    default:
+      return cartItem;
+  }
+};
+
 const cartReducer = cartSlice.reducer;
 export const cartActions = cartSlice.actions;
 export default cartReducer;

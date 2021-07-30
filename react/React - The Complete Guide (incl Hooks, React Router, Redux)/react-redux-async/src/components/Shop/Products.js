@@ -25,9 +25,11 @@ const Products = (props) => {
           return (
             <ProductItem
               key={product.title}
-              title={product.title}
-              price={product.price}
-              description={product.description}
+              {...product}
+              // title={product.title}
+              // price={product.price}
+              // total={product.total}
+              // description={product.description}
             />
           );
         })}

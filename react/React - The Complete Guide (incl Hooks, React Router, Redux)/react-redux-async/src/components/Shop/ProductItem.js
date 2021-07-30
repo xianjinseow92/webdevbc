@@ -6,13 +6,14 @@ import { cartActions } from "store/reducers/cartReducer";
 
 const ProductItem = (props) => {
   const dispatch = useDispatch();
-  const { title, price, description } = props;
+  const { title, price, description, total } = props;
 
   const addProductHandler = () => {
     dispatch(cartActions.addItemToCart({
       title: title,
       price: price,
       quantity: 1,
+      total: total,
       description: description
     }));
   }
