@@ -3,7 +3,7 @@ import { Component } from "react";
 import "./App.css";
 
 // Components
-import CardList from "./components/card-list/card-list.component";
+import CardList from "components/card-list/card-list.component";
 class App extends Component {
   constructor() {
     super(); // to initialize Component's constructor
@@ -26,11 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         {console.log("App rendered")}
-        <CardList name="lj">
-          {this.state.monsters.map((monster) => (
-            <h1 key={monster.id}>{monster.name}</h1>
-          ))}
-        </CardList>
+        <CardList monsters={this.state.monsters} />
         <button onClick={this.initializeMonstersHandler}>
           Create Monsters
         </button>
