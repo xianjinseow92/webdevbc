@@ -35,9 +35,12 @@ class App extends Component {
     const filteredUsers = monsters.filter((monster) =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
+
+    console.log("App rendered")
+
     return (
       <div className="App">
-        {console.log("App rendered")}
+        <h1>Monsters Robodex</h1>
         <SearchInput textChangeHandler={this.filterNames} placeholder="Find Monster(s)"/>
         <CardList monsters={filteredUsers} />
         <button onClick={this.initializeMonstersHandler}>
